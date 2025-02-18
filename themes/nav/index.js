@@ -298,8 +298,8 @@ const LayoutSlug = props => {
                 <NotionPage post={post} />
               </div>
 
-          <p>【分类】【tag】哎怎么不出现呢后台也设过了呀？我去div输出是空的！为什么</p>
-<div className='mt-10'>
+          <p>哦哦哦出来啦！可以可以，就是这个样式完蛋了</p>
+        <div className='mt-10'>
           <div className='mb-3 flex justify-center'>
             {post.category && (
               <>
@@ -314,17 +314,6 @@ const LayoutSlug = props => {
               </>
             )}
           </div>
-              <div className='flex justify-between'>
-                {siteConfig('POST_DETAIL_CATEGORY') && post?.category && (
-                  <CategoryItem category={post.category} />
-                )}
-                <div>
-                  {siteConfig('POST_DETAIL_TAG') &&
-                    post?.tagItems?.map(tag => (
-                      <TagItemMini key={tag.name} tag={tag} />
-                    ))}
-                </div>
-              </div>
               {/* 分享 */}
               {/* <ShareBar post={post} /> */}
               {/* 文章分类和标签信息 */}
