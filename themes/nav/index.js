@@ -286,11 +286,11 @@ const LayoutSlug = props => {
             {siteConfig('POST_TITLE_ICON') && (
               <NotionIcon icon={post?.pageIcon} />
             )}
-            // 把文章标题改成文章日期
             {post?.title}
           </h1>
           {/* 添加日期等 */}
           <p>{post?.publishDay}</p>
+          <span>{locale.COMMON.TAGS}:{tag} {locale.COMMON.CATEGORY}:{category}</span>
 
           {/* Notion文章主体 */}
           {post && (
