@@ -74,7 +74,8 @@ const Style = () => {
         border-radius: 0.75rem;
         /*border-radius: 8px;*/
         margin-bottom: 16px !important;
-        box-shadow: 0 1px 4px rgb(0 0 0 / 8%);
+        /*魔改by猫鱼*/
+        box-shadow: 0 1px 0 2px rgb(0 0 0 / 8%);
         cursor: pointer;
         display: flow-root;
         position: relative;
@@ -82,7 +83,8 @@ const Style = () => {
         transition: box-shadow 0.1s ease-in-out;*/
     }
     .card:hover {
-        box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
+        /*魔改by猫鱼*/
+        box-shadow: 0 0 0px 2px #cb9130;
     }
     .notion-gallery-grid {
         padding-left: 4px;
