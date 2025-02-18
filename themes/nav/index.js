@@ -299,7 +299,21 @@ const LayoutSlug = props => {
               </div>
 
           <p>【分类】【tag】哎怎么不出现呢后台也设过了呀？我去div输出是空的！为什么</p>
-          <CategoryItem category={post.category} />
+<div className='mt-10'>
+          <div className='mb-3 flex justify-center'>
+            {post.category && (
+              <>
+                <Link
+                  href={`/category/${post.category}`}
+                  passHref
+                  legacyBehavior>
+                  <div className='cursor-pointer px-2 py-1 mb-2 border rounded-sm dark:border-white text-sm font-medium hover:underline duration-200 shadow-text-md text-white'>
+                    {post.category}
+                  </div>
+                </Link>
+              </>
+            )}
+          </div>
               <div className='flex justify-between'>
                 {siteConfig('POST_DETAIL_CATEGORY') && post?.category && (
                   <CategoryItem category={post.category} />
