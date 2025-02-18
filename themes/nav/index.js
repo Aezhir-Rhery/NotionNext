@@ -291,6 +291,17 @@ const LayoutSlug = props => {
           {/* 添加日期等 */}
           <p>{post?.publishDay}</p>
           <span>【分类】【tag】</span>
+                        <div className='flex justify-between'>
+                {CONFIG.POST_DETAIL_CATEGORY && post?.category && (
+                  <CategoryItem category={post.category} />
+                )}
+                <div>
+                  {CONFIG.POST_DETAIL_TAG &&
+                    post?.tagItems?.map(tag => (
+                      <TagItemMini key={tag.name} tag={tag} />
+                    ))}
+                </div>
+              </div>
 
           {/* Notion文章主体 */}
           {post && (

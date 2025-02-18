@@ -8,15 +8,12 @@ const Style = () => {
   return <style jsx global>{`
     body {
         background-color: #fbfbfb;
-        /*魔改by猫鱼*/
-        font-family: 'Hiragino Maru Gothic Pro',Roboto,HelveticaNeue,Arial,sans-serif;
-        font-size: 14px;
-        line-height: 1.45;
-        overflow-wrap: break-word;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        -webkit-font-smoothing: antialiased;
     }
     #theme-onenav {
-        font-family: 'Hiragino Maru Gothic Pro',Roboto,HelveticaNeue,Arial,sans-serif;
-        font-size: 14px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 13px;
     }
     #top-wrapper img {
         height: 44px;
