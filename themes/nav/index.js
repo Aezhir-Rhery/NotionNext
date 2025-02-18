@@ -255,7 +255,6 @@ const LayoutPostList = props => {
 const LayoutSlug = props => {
   const { post, lock, validPassword } = props
   const router = useRouter()
-  // sublime text颜色有点问题，插个注释居然就好了
   const waiting404 = siteConfig('POST_WAITING_TIME_FOR_404') * 1000
   useEffect(() => {
     // 404
@@ -288,9 +287,10 @@ const LayoutSlug = props => {
               <NotionIcon icon={post?.pageIcon} />
             )}
             // 把文章标题改成文章日期
-            // {post?.title}
-            {post?.publishDay}
+            {post?.title}
           </h1>
+          {/* 添加日期等 */}
+          <p>{post?.publishDay}</p>
 
           {/* Notion文章主体 */}
           {post && (
@@ -307,9 +307,7 @@ const LayoutSlug = props => {
                   <CategoryItem category={post.category} />
                 )}
                 <div>
-                  // 能修好tag消失的问题吗？
-                  // {CONFIG.POST_DETAIL_TAG &&
-                  {siteConfig('POST_DETAIL_TAG') &&
+                  {CONFIG.POST_DETAIL_TAG &&
                     post?.tagItems?.map(tag => (
                       <TagItemMini key={tag.name} tag={tag} />
                     ))}
