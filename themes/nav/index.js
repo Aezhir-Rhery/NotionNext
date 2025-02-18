@@ -298,22 +298,7 @@ const LayoutSlug = props => {
                 <NotionPage post={post} />
               </div>
 
-          <p>哦哦哦出来啦！可以可以，就是这个样式完蛋了，这个a class是从哪儿来的呀。。。</p>
-        <div className='mt-10'>
-          <div className='mb-3 flex justify-center'>
-            {post.category && (
-              <>
-                <Link
-                  href={`/category/${post.category}`}
-                  passHref
-                  legacyBehavior>
-                  <div className='cursor-pointer px-2 py-1 mb-2 border rounded-sm dark:border-white text-sm font-medium hover:underline duration-200 shadow-text-md text-white'>
-                    {post.category}
-                  </div>
-                </Link>
-              </>
-            )}
-          </div>
+          <p>有问题，换codespace做做看</p>
               {/* 分享 */}
               {/* <ShareBar post={post} /> */}
               {/* 文章分类和标签信息 */}
