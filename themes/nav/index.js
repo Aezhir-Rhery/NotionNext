@@ -299,12 +299,12 @@ const LayoutSlug = props => {
               </div>
 
           <p>【分类】【tag】哎怎么不出现呢后台也设过了呀？</p>
-                        <div className='flex justify-between'>
-                {CONFIG.POST_DETAIL_CATEGORY && post?.category && (
+              <div className='flex justify-between'>
+                {siteConfig('POST_DETAIL_CATEGORY') && post?.category && (
                   <CategoryItem category={post.category} />
                 )}
                 <div>
-                  {CONFIG.POST_DETAIL_TAG &&
+                  {siteConfig('POST_DETAIL_TAG') &&
                     post?.tagItems?.map(tag => (
                       <TagItemMini key={tag.name} tag={tag} />
                     ))}
