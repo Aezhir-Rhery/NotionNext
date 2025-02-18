@@ -290,7 +290,15 @@ const LayoutSlug = props => {
           </h1>
           {/* 添加日期等 */}
           <p>{post?.publishDay}</p>
-          <span>【分类】【tag】</span>
+
+          {/* Notion文章主体 */}
+          {post && (
+            <section className='px-1'>
+              <div id='article-wrapper'>
+                <NotionPage post={post} />
+              </div>
+
+          <p>【分类】【tag】哎怎么不出现呢后台也设过了呀？</p>
                         <div className='flex justify-between'>
                 {CONFIG.POST_DETAIL_CATEGORY && post?.category && (
                   <CategoryItem category={post.category} />
@@ -302,14 +310,6 @@ const LayoutSlug = props => {
                     ))}
                 </div>
               </div>
-
-          {/* Notion文章主体 */}
-          {post && (
-            <section className='px-1'>
-              <div id='article-wrapper'>
-                <NotionPage post={post} />
-              </div>
-
               {/* 分享 */}
               {/* <ShareBar post={post} /> */}
               {/* 文章分类和标签信息 */}
