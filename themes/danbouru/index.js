@@ -4,6 +4,7 @@
  * # NAV 主题说明
  * 主题开发者 [emengweb](https://github.com/emengweb)
  * 开启方式 在blog.config.js 将主题配置为 `NAV`
+ * 魔改：猫鱼
  */
 
 import Comment from '@/components/Comment'
@@ -73,7 +74,7 @@ const LayoutBase = props => {
   let links = customMenu
 
   // 默认使用自定义菜单，否则将遍历所有的category生成菜单
-  if (!siteConfig('NAV_USE_CUSTOM_MENU', null, CONFIG)) {
+  if (!siteConfig('DANBOURU_USE_CUSTOM_MENU', null, CONFIG)) {
     links =
       categoryOptions &&
       categoryOptions?.map(c => {
