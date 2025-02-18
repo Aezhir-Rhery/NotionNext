@@ -307,7 +307,9 @@ const LayoutSlug = props => {
                   <CategoryItem category={post.category} />
                 )}
                 <div>
-                  {CONFIG.POST_DETAIL_TAG &&
+                  // 能修好tag消失的问题吗？
+                  // {CONFIG.POST_DETAIL_TAG &&
+                  {siteConfig('POST_DETAIL_TAG') &&
                     post?.tagItems?.map(tag => (
                       <TagItemMini key={tag.name} tag={tag} />
                     ))}
