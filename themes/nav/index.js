@@ -290,7 +290,7 @@ const LayoutSlug = props => {
           </h1>
           {/* 添加日期等 */}
           <p>{post?.publishDay}</p>
-          <span>{locale.COMMON.TAGS}:{tag} {locale.COMMON.CATEGORY}:{category}</span>
+          <span>【分类】【tag】</span>
 
           {/* Notion文章主体 */}
           {post && (
