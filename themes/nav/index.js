@@ -255,6 +255,7 @@ const LayoutPostList = props => {
 const LayoutSlug = props => {
   const { post, lock, validPassword } = props
   const router = useRouter()
+  // sublime text颜色有点问题，插个注释居然就好了
   const waiting404 = siteConfig('POST_WAITING_TIME_FOR_404') * 1000
   useEffect(() => {
     // 404
@@ -286,7 +287,9 @@ const LayoutSlug = props => {
             {siteConfig('POST_TITLE_ICON') && (
               <NotionIcon icon={post?.pageIcon} />
             )}
-            {post?.title}
+            // 把文章标题改成文章日期
+            // {post?.title}
+            {post?.publishDay}
           </h1>
 
           {/* Notion文章主体 */}
