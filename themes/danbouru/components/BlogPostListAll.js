@@ -41,7 +41,7 @@ const BlogPostListAll = (props) => {
     const categoryIcon = filterLinks[categoryName]?.icon ? filterLinks[categoryName]?.icon : '' // 将pageIcon转换为字符串
     let existingGroup = null
     // 开启自动分组排序
-    if (JSON.parse(siteConfig('NAV_AUTO_SORT', null, CONFIG))) {
+    if (JSON.parse(siteConfig('DANBOURU_AUTO_SORT', null, CONFIG))) {
       existingGroup = groups.find(group => group.category === categoryName) // 搜索同名的最后一个分组
     } else {
       existingGroup = groups[groups.length - 1] // 获取最后一个分组
