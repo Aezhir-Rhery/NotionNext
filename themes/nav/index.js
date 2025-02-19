@@ -403,9 +403,10 @@ const LayoutCategoryIndex = props => {
   const { locale } = useGlobal()
   return (
     <>
-      <div className='bg-white dark:bg-gray-700 py-10'>
+      {/*<div className='bg-white dark:bg-gray-700 py-10'>*/}
+      <div className='py-10'>
         <div className='dark:text-gray-200 mb-5'>
-          <i className='mr-4 fas fa-th' />
+          <i className='mr-1 fas fa-th' />
           {locale.COMMON.CATEGORY}:
         </div>
         <div id='category-list' className='duration-200 flex flex-wrap'>
@@ -420,8 +421,8 @@ const LayoutCategoryIndex = props => {
                   className={
                     'hover:text-black dark:hover:text-white dark:text-gray-300 dark:hover:bg-gray-600 px-5 cursor-pointer py-2 hover:bg-gray-100'
                   }>
-                  <i className='mr-4 fas fa-folder' />
-                  {category.name}({category.count})
+                  <i className='mr-1 fas fa-folder' />
+                  {category.name} ({category.count})
                 </div>
               </Link>
             )
@@ -435,8 +436,30 @@ const LayoutCategoryIndex = props => {
 /**
  * 标签列表
  */
+/* 原本的主题根本没有输出标签列表！！！从gitbook复制了一个过来 by猫鱼 */
 const LayoutTagIndex = props => {
-  return <></>
+  const { tagOptions } = props
+  const { locale } = useGlobal()
+
+  return (
+    <>
+      <div className='py-10'>
+        <div className='dark:text-gray-200 mb-5'>
+          <i className='mr-1 fas fa-tag' />
+          {locale.COMMON.TAGS}:
+        </div>
+        <div id='tags-list' className='duration-200 flex flex-wrap'>
+          {tagOptions?.map(tag => {
+            return (
+              <div key={tag.name} className='p-2'>
+                <TagItemMini key={tag.name} tag={tag} />
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </>
+  )
 }
 
 export {
