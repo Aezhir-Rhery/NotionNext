@@ -14,15 +14,15 @@ const Footer = ({ siteInfo }) => {
 
       <div className='flex justify-center'>
         <div>
-          <i className='text-xs mx-1 animate-pulse fas fa-heart' />
+          {/* 取消这个爱心 by猫鱼 */}
+          {/* <i className='text-xs mx-1 animate-pulse fas fa-heart' /> */}
           <a
             href={siteConfig('LINK')}
             className='underline font-bold text-gray-500 dark:text-gray-300 '>
             {siteConfig('AUTHOR')}
           </a>
-          .<br />
         </div>
-        © {`${copyrightDate}`}
+        <p>©{`${copyrightDate}`}</p>
       </div>
 
       <div className='text-xs font-serif py-1'>
@@ -44,7 +44,7 @@ const Footer = ({ siteInfo }) => {
         </>
       )}
       <BeiAnGongAn />
-
+      {/* 不用看数字了意义不大 by猫鱼
       <span className='hidden busuanzi_container_site_pv'>
         <i className='text-xs fas fa-eye' />
         <span className='px-1 busuanzi_value_site_pv'> </span>{' '}
@@ -53,6 +53,7 @@ const Footer = ({ siteInfo }) => {
         <i className='text-xs fas fa-users' />{' '}
         <span className='px-1 busuanzi_value_site_uv'> </span>{' '}
       </span>
+      /*}
       {/* <h1 className='pt-1'>{siteConfig('TITLE')}</h1> */}
     </footer>
   )

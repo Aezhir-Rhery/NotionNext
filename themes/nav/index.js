@@ -288,8 +288,6 @@ const LayoutSlug = props => {
             )}
             {post?.title}
           </h1>
-          {/* 添加日期等 */}
-          <p>{post?.publishDay}</p>
 
           {/* Notion文章主体 */}
           {post && (
@@ -298,7 +296,9 @@ const LayoutSlug = props => {
                 <NotionPage post={post} />
               </div>
 
-          <p>有问题，换codespace做做看</p>
+          {/* 添加日期，分类，tag等但链接没有加上（啊这）by猫鱼 */}
+          <p>{post?.publishDay}  {post?.category}   #{post?.tags}</p>
+
               {/* 分享 */}
               {/* <ShareBar post={post} /> */}
               {/* 文章分类和标签信息 */}
