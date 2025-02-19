@@ -34,11 +34,7 @@ export const MenuItem = ({ link }) => {
         {link?.subMenus ? (
           <>
             <span className='dark:text-neutral-400 dark:hover:text-white font-bold w-full display-block'>
-              {/* 将自带icon替换为notion的icon by猫鱼
               <i className={`text-base ${link?.icon ? link?.icon : ''} mr-1`} />
-              /*}
-              {/* 添加一个notion的icon by猫鱼 */}
-              <span>{link?.pageIcon} </span>
               {link?.title}
             </span>
             <div className='inline-flex items-center select-none pointer-events-none '>
@@ -50,13 +46,9 @@ export const MenuItem = ({ link }) => {
           <Link
             href={url}
             className='dark:text-neutral-400 dark:hover:text-white font-bold w-full display-block'>
-            {/* 将自带icon替换为notion的icon by猫鱼
             <i
               className={`text-base ${link?.icon ? link?.icon : isAnchor ? 'fas fa-hashtag' : ''} mr-1`}
             />
-            */}
-            {/* 添加一个notion的icon by猫鱼 */}
-            <span>{link?.pageIcon} </span>
             {link?.title}
           </Link>
         )}
@@ -73,13 +65,9 @@ export const MenuItem = ({ link }) => {
               <div key={index} className='nav-submenu'>
                 <Link href={sUrl}>
                   <span className='dark:text-neutral-400 text-gray-500 hover:text-black dark:hover:text-white text-xs font-bold'>
-                    {/* 将自带icon替换为notion的icon by猫鱼
                     <i
                       className={`text-xs mr-1 ${sLink?.icon ? sLink?.icon : sIsAnchor ? 'fas fa-hashtag' : ''}`}
                     />
-                    */}
-                    {/* 添加一个notion的icon by猫鱼 */}
-                    <span>{sLink?.pageIcon} </span>
                     {sLink.title}
                   </span>
                 </Link>
