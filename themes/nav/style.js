@@ -93,7 +93,7 @@ const Style = () => {
     }
     
     .notion-collection-card-cover {
-        display: none;
+        /* display: none; 为什么要躲开啊by猫鱼*/
     }
     
     // 底色
