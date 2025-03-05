@@ -149,6 +149,10 @@ const SEO = props => {
           {COMMENT_WEBMENTION_AUTH && (
             <link href={COMMENT_WEBMENTION_AUTH} rel='me' />
           )}
+          <link rel='me' href='https://wxw.moe/@ameki' />
+          <link rel='me' href={REL_ME_MASTODON_1} />
+          <link rel='me' href='https://t.co/lgtTdKO8C9' />
+          <link rel='me' href='https://github.com/Aezhir-Rhery' />
         </>
       )}
 
