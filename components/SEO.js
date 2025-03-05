@@ -135,9 +135,9 @@ const SEO = props => {
       <meta name='twitter:title' content={title} />
 
       <link rel='shortcut icon' href={BLOG_FAVICON} />
-      <link rel='apple-touch-icon' sizes='640x640' href={BLOG_FAVICON_TOUCH} />
+      <link rel='apple-touch-icon' sizes='640x640' href='/favicon-apple-640.webp' />
       <link rel='me' href='https://wxw.moe/@ameki' />
-      <link rel='me' href={REL_ME_MASTODON_1} />
+      <link rel='me' href='https://wxw.ooo/@ameki' />
       <link rel='me' href='https://t.co/lgtTdKO8C9' />
       <link rel='me' href='https://github.com/Aezhir-Rhery' />
 
