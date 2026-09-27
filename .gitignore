@@ -71,3 +71,14 @@ webpack-internal:/
 
 # Local Cloudflare Worker route configuration
 /cloudflare/notion-image-proxy/wrangler.toml
+
+
+# Local environment
+.env.local
+.env*.local
+
+# Editor backups
+*.bak
+
+# Local installation logs
+install-log.txt
