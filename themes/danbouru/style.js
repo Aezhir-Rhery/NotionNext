@@ -65,26 +65,38 @@ const Style = () => {
     .stack-list > .category:first-child {
         /*padding-top: 16px !important;*/
     }
+
     .card {
+        /* 首页文章列表 */
         cursor: pointer;
-        transition: box-shadow 0.1s ease-in-out;
-        box-shadow: 0 1px 4px rgb(0 0 0 / 8%);
-        /*background-color: #fff;
-        height: calc(100% - 16px);
-        overflow: visible;
-        padding: 15px;
-        border-radius: 0.75rem;
-        /*border-radius: 8px;*/
-        margin-bottom: 16px !important;
-        box-shadow: 0 1px 4px rgb(0 0 0 / 8%);
-        cursor: pointer;
-        display: flow-root;
-        position: relative;
-        box-sizing: border-box;
-        transition: box-shadow 0.1s ease-in-out;*/
+
+        /* 预留边框空间，避免 Hover 时改变布局 */
+        border: 2px solid transparent;
+
+        /* 普通状态：浅色实心阴影 */
+        box-shadow: 4px 4px 0 #22222213;
+
+        transition:
+            transform 0.18s ease,
+            box-shadow 0.18s ease,
+            border-color 0.18s ease;
     }
+
     .card:hover {
-        box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
+        /* 向右下方移动 2px */
+        transform: translate(2px, 2px);
+
+        /* 收起阴影 */
+        box-shadow: 0 0 0 #2222220c;
+
+        /* 只改变颜色，不改变边框宽度 */
+        border-color: #cb912f;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .card {
+            transition: none;
+        }
     }
     .notion-gallery-grid {
         padding-left: 4px;

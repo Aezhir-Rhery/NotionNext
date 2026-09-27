@@ -20,13 +20,13 @@ const Footer = ({ siteInfo }) => {
             className='underline font-bold text-gray-500 dark:text-gray-300 '>
             {siteConfig('AUTHOR')}
           </a>
-          .<br />
+          &nbsp;&nbsp;<br />
         </div>
         © {`${copyrightDate}`}
       </div>
 
       <div className='text-xs font-serif py-1'>
-        有了吗？Powered By{' '}
+        Powered By{' '}
         <a
           href='https://github.com/notionnext-org/NotionNext'
           className='underline text-gray-500 dark:text-gray-300'>
