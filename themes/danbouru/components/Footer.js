@@ -26,7 +26,7 @@ const Footer = ({ siteInfo }) => {
       </div>
 
       <div className='text-xs font-serif py-1'>
-        Powered By{' '}
+        有了吗？Powered By{' '}
         <a
           href='https://github.com/notionnext-org/NotionNext'
           className='underline text-gray-500 dark:text-gray-300'>
