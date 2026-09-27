@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { siteConfig } from '@/lib/config'
-import { useNavGlobal } from '@/themes/nav'
+import { useNavGlobal } from '@/themes/danbouru'
 import CONFIG from '../config'
 import BlogPostItem from './BlogPostItem'
 import BlogPostListEmpty from './BlogPostListEmpty'
