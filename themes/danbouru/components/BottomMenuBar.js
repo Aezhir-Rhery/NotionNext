@@ -1,4 +1,4 @@
-import { useNavGlobal } from '@/themes/nav'
+import { useNavGlobal } from '@/themes/danbouru'
 import JumpToTopButton from './JumpToTopButton'
 
 export default function BottomMenuBar({ post, className }) {

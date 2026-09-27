@@ -1,5 +1,5 @@
 import { deepClone } from '@/lib/utils'
-import { useNavGlobal } from '@/themes/nav'
+import { useNavGlobal } from '@/themes/danbouru'
 import { useImperativeHandle, useRef, useState } from 'react'
 let lock = false
 
