@@ -17,7 +17,7 @@ const Footer = ({ siteInfo }) => {
           <i className='text-xs mx-1 animate-pulse fas fa-heart' />
           <a
             href={siteConfig('LINK')}
-            className='underline font-bold text-gray-500 dark:text-gray-300 '>
+            className='text-gray-500 dark:text-gray-300 '>
             {siteConfig('AUTHOR')}
           </a>
           &nbsp;&nbsp;<br />
@@ -25,11 +25,11 @@ const Footer = ({ siteInfo }) => {
         © {`${copyrightDate}`}
       </div>
 
-      <div className='text-xs font-serif py-1'>
+      <div className='text-xs py-1'>
         Powered By{' '}
         <a
           href='https://github.com/notionnext-org/NotionNext'
-          className='underline text-gray-500 dark:text-gray-300'>
+          className='text-gray-500 dark:text-gray-300'>
           NotionNext {siteConfig('VERSION')}
         </a>
       </div>
@@ -46,11 +46,11 @@ const Footer = ({ siteInfo }) => {
       <BeiAnGongAn />
 
       <span className='hidden busuanzi_container_site_pv'>
-        <i className='text-xs fas fa-eye' />
+        <i className='text-xs' />
         <span className='px-1 busuanzi_value_site_pv'> </span>{' '}
       </span>
       <span className='pl-2 hidden busuanzi_container_site_uv'>
-        <i className='text-xs fas fa-users' />{' '}
+        <i className='text-xs' />{' '}
         <span className='px-1 busuanzi_value_site_uv'> </span>{' '}
       </span>
       {/* <h1 className='pt-1'>{siteConfig('TITLE')}</h1> */}
