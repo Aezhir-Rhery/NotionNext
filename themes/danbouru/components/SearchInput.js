@@ -102,6 +102,7 @@ const SearchInput = ({ currentSearch, cRef, className }) => {
         'flex w-36 hover:w-36 md:hover:w-56 md:w-56 transition md:mr-5'
       }>
       <input
+        name='search'
         ref={searchInputRef}
         type='text'
         className={`${className} outline-none w-full text-sm pl-4 transition-all duration-200 ease-in focus:shadow-lg font-light leading-10 text-black bg-opacity-50 md:bg-opacity-100 bg-neutral-100 md:hover:bg-neutral-200 md:focus:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 dark:text-white`}

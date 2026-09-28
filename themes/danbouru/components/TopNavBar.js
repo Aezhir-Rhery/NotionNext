@@ -69,7 +69,7 @@ export default function TopNavBar(props) {
           {/* 搜索框、折叠按钮、仅移动端显示 */}
           <div className='pt-1 flex md:hidden justify-end items-center space-x-3 font-serif dark:text-gray-200 '>
             <div className='relative md:hidden top-0 right-0'>
-              <SearchInput className='my-3 rounded-full' />
+              <SearchInput name='search' className='my-3 rounded-full' />
             </div>
             <DarkModeButton className='flex text-md items-center h-full' />
             <div
@@ -86,7 +86,7 @@ export default function TopNavBar(props) {
           {/* 桌面端顶部菜单 */}
           <div className='hidden md:flex'>
             {/* {links && links?.map((link, index) => <MenuItemDrop key={index} link={link} />)} */}
-            <SearchInput className='my-3 rounded-full' />
+            <SearchInput name='search' className='my-3 rounded-full' />
             <DarkModeButton className='my-5 mr-6 text-sm flex items-center h-full pt-px' />
           </div>
         </div>
