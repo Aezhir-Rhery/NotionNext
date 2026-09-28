@@ -391,18 +391,16 @@ const Style = () => {
 
 /* 无序列表整体 */
 #theme-onenav .notion-list-disc {
-    margin-top: 0.35rem !important;
-    margin-bottom: 0.35rem !important;
-
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
     padding-left: 1.4rem !important;
 }
 
 /* 每一项 */
 #theme-onenav .notion-list-disc > li {
-    margin-top: 0.08rem !important;
-    margin-bottom: 0.08rem !important;
-
-    line-height: 0.45 !important;
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
+    line-height: 1.4rem !important;
 }
 
 /* 圆点改成姜黄色 */
@@ -410,8 +408,8 @@ const Style = () => {
     color: #cb912f !important;
 }
 #theme-onenav .notion-list-disc .notion-list-disc {
-    margin-top: 0.2rem !important;
-    margin-bottom: 0.2rem !important;
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
 }
 /* =========================
    Danbouru：Checkbox
