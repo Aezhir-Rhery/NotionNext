@@ -1,9 +1,10 @@
 'use client'
 
 /**
- * # NAV 主题说明
+ * # Danbouru纸箱 主题说明
  * 主题开发者 [emengweb](https://github.com/emengweb)
- * 开启方式 在blog.config.js 将主题配置为 `NAV`
+ * 魔改者 [猫鱼]
+ * 开启方式 在blog.config.js 将主题配置为 `danbouru`
  */
 
 import NotionIcon from '@/components/NotionIcon'
@@ -255,10 +256,10 @@ const LayoutPostList = props => {
   // 如果是搜索，则列表顶部嵌入 搜索框
   return (
     <>
-      <div className='w-full max-w-7xl mx-auto justify-center mt-8'>
+      <div className='w-full max-w-7xl mx-auto justify-center mt-12'>
         <div
           id='posts-wrapper'
-          class='card-list grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
+          className='card-list grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
           {posts?.map(post => (
             <BlogPostCard key={post.id} post={post} className='card' />
           ))}
@@ -320,6 +321,7 @@ const LayoutSlug = props => {
               {/* 分享 */}
               {/* <ShareBar post={post} /> */}
               {/* 文章分类和标签信息 */}
+              {/* 原结构，显示不了分类和tag及日期
               <div className='flex justify-between'>
                 {CONFIG.POST_DETAIL_CATEGORY && post?.category && (
                   <CategoryItem category={post.category} />
@@ -330,6 +332,39 @@ const LayoutSlug = props => {
                       <TagItemMini key={tag.name} tag={tag} />
                     ))}
                 </div>
+              </div> */}
+              <hr className='my-8 border-gray-200 dark:border-gray-700' />
+              <div className='post-footer-meta text-sm text-gray-500 dark:text-gray-400 flex flex-wrap items-center gap-x-4 gap-y-2'>
+                {/* 分类 */}
+                {post?.category && (
+                  <span className='inline-flex items-center'>
+                    <i />
+                    <CategoryItem category={post.category} noHover />
+                  </span>
+                )}
+                {/* 标签 */}
+                {post?.tagItems?.length > 0 && (
+                  <span className='inline-flex items-center flex-wrap'>
+                    <i className='fas fa-tags mr-1.5' />
+                    {post.tagItems.map(tag => (
+                      <TagItemMini key={tag.name} tag={tag} footerStyle />
+                    ))}
+                  </span>
+                )}
+                {/* 创建日期 */}
+                {post?.publishDay && (
+                  <span className='inline-flex items-center'>
+                    <i className='fas fa-calendar-day mr-1.5' />
+                    {post.publishDay}
+                  </span>
+                )}
+                {/* 最后修改 */}
+                {post?.lastEditedDay && (
+                  <span className='inline-flex items-center'>
+                    <i className='fas fa-pen mr-1.5' />
+                    {post.lastEditedDay}
+                  </span>
+                )}
               </div>
 
               {/* 上一篇、下一篇文章 */}
@@ -452,9 +487,34 @@ const LayoutCategoryIndex = props => {
 
 /**
  * 标签列表
+ * 原主题nav根本没写！！！danbouru补上。
  */
-const LayoutTagIndex = props => {
+/*const LayoutTagIndex = props => {
   return <></>
+}*/
+const LayoutTagIndex = props => {
+  const { tagOptions } = props
+
+  return (
+    <div className='w-full max-w-7xl mx-auto mt-8'>
+      <div
+        id='tags-list'
+        className='flex flex-wrap gap-3'>
+        {tagOptions?.map(tag => (
+          <SmartLink
+            key={tag.name}
+            href={`/tag/${encodeURIComponent(tag.name)}`}
+            passHref>
+            <div className='cursor-pointer px-4 py-2 rounded-lg bg-white dark:bg-neutral-800 hover:bg-gray-100 dark:hover:bg-neutral-700 duration-200'>
+              <i className='mr-2 fas fa-tag' />
+              {tag.name}
+              {tag.count ? ` (${tag.count})` : ''}
+            </div>
+          </SmartLink>
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export {

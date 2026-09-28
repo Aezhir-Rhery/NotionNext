@@ -23,8 +23,26 @@ const Style = () => {
     /*#top-nav {
         background-color: rgb(251 251 251 / 70%);
     }*/
+    /* danbouru专用：关闭 NotionNext 默认懒加载灰色动画 */
+    .lazy-image-placeholder {
+        background: transparent !important;
+        background-image: none !important;
+        animation: none !important;
+    }
+
+.post-footer-meta .danbouru-footer-tag {
+    border-radius: 6px;
+}
+
+.post-footer-meta .danbouru-footer-tag:hover {
+    background-color: #cb912f !important;
+    color: #fff !important;
+    box-shadow: none !important;
+}
+
+
     .main-menu {
-        box-shadow: 0 1px 4px rgb(0 0 0/8%);
+        border: 2px solid #22222213;
     }
     .nav-menu {
         padding: 8px 0px 4px 0px;
@@ -71,7 +89,7 @@ const Style = () => {
         cursor: pointer;
 
         /* 预留边框空间，避免 Hover 时改变布局 */
-        border: 2px solid transparent;
+        border: 2px solid #22222213;
 
         /* 普通状态：浅色实心阴影 */
         box-shadow: 4px 4px 0 #22222213;

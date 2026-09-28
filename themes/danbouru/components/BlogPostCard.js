@@ -13,13 +13,20 @@ const BlogPostCard = ({ post, className }) => {
   const router = useRouter()
   const currentSelected = router.asPath.split('?')[0] === '/' + post.slug
   let pageIcon =
+    post.pageIcon || siteConfig('IMG_LAZY_LOAD_PLACEHOLDER')
+
+  if (pageIcon?.includes('amazonaws.com')) {
+    pageIcon += '&width=88'
+  }
+  /*GPT说有bug，修了
+  let pageIcon =
     post.pageIcon !== ''
       ? post.pageIcon
       : siteConfig('IMG_LAZY_LOAD_PLACEHOLDER')
   pageIcon =
     post.pageIcon.indexOf('amazonaws.com') !== -1
       ? post.pageIcon + '&width=88'
-      : post.pageIcon
+      : post.pageIcon*/
   return (
     <SmartLink
       href={post?.href}

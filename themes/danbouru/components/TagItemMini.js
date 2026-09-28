@@ -1,4 +1,5 @@
-import SmartLink from '@/components/SmartLink'
+/* 原本的tag在hover的时候会有大黑块，去掉，并且把tag的底色统一 *
+/* import SmartLink from '@/components/SmartLink'
 
 const TagItemMini = ({ tag, selected = false }) => {
   return (
@@ -13,6 +14,39 @@ const TagItemMini = ({ tag, selected = false }) => {
         : `text-gray-600 hover:shadow-xl dark:border-gray-400 notion-${tag.color}_background dark:bg-gray-800`}` }>
 
       <div className='font-light dark:text-gray-400'>{selected && <i className='mr-1 fas fa-tag'/>} {tag.name + (tag.count ? `(${tag.count})` : '')} </div>
+
+    </SmartLink>
+  )
+}
+
+export default TagItemMini */
+
+import SmartLink from '@/components/SmartLink'
+
+const TagItemMini = ({ tag, selected = false, noHover = false, footerStyle = false }) => {
+  const hoverClass = footerStyle
+    ? 'danbouru-footer-tag '
+    : noHover
+      ? ''
+      : 'hover:bg-gray-500 hover:text-white dark:hover:text-white hover:shadow-xl '
+
+  return (
+    <SmartLink
+      key={tag}
+      href={selected ? '/' : `/tag/${encodeURIComponent(tag.name)}`}
+      passHref
+      className={`cursor-pointer inline-block rounded-md duration-200
+        mr-1.5 py-0.5 px-1.5 text-[11px] whitespace-nowrap
+        ${hoverClass}
+        ${selected
+          ? 'text-white dark:text-gray-300 bg-black dark:bg-black'
+          : `text-gray-600 dark:border-gray-600 bg-gray-100 dark:bg-gray-800`
+        }`}>
+
+      <div className='font-light dark:text-gray-400'>
+        {selected && <i className='mr-1 fas fa-tag' />}
+        {tag.name + (tag.count ? `(${tag.count})` : '')}
+      </div>
 
     </SmartLink>
   )
