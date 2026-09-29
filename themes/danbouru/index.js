@@ -3,7 +3,7 @@
 /**
  * # Danbouru纸箱 主题说明
  * 主题开发者 [emengweb](https://github.com/emengweb)
- * 魔改者 [猫鱼]
+ * 魔改者 [猫鱼](https://cat-fish.net)
  * 开启方式 在blog.config.js 将主题配置为 `danbouru`
  */
 
