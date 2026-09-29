@@ -325,7 +325,7 @@ const LayoutSlug = props => {
                 <img
                   src={getTitleIconUrl(post.pageIcon)}
                   alt=''
-                  className='w-8 h-8 my-auto inline mr-1'
+                  className='w-8 h-8'
                 />
               ) : (
                 <span className='mr-1'>{post.pageIcon}</span>

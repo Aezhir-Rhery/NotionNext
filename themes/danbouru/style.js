@@ -510,13 +510,24 @@ const Style = () => {
     color: #fff !important;
     }
 
-    #theme-onenav .danbouru-page-title {
+#theme-onenav .danbouru-page-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
     font-size: 1.875rem;
     line-height: 2.25rem;
     padding-top: 1rem;
     margin-bottom: 1.25rem;
-    }
+}
 
+#theme-onenav .danbouru-page-title > img {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 auto;
+    margin: 0 !important;
+    object-fit: contain;
+}
     @media (min-width: 768px) {
     #theme-onenav .danbouru-page-title {
         padding-top: 3rem;
@@ -711,7 +722,37 @@ const Style = () => {
 /* =========================
    Notion Gallery：统一 500px 内双列
    ========================= */
+/* =========================
+   Notion Gallery：视图标签
+   ========================= */
 
+/* 去掉 active 状态原本的黑色下划线 */
+#theme-onenav .notion-collection-view-tabs-content-item-active {
+    border-bottom: none !important;
+    box-shadow: none !important;
+
+    /* 和文章底部 Tag 一样做成小圆角块 */
+    border-radius: 6px !important;
+    background-color: #f3f3f3 !important;
+}
+/* 杀掉更多下划线 */
+#theme-onenav .notion-collection-card * {
+    text-decoration: none !important;
+}
+/* 所有视图标签都使用同样的圆角 */
+#theme-onenav .notion-collection-view-tabs-content-item {
+    border-radius: 6px !important;
+
+    transition:
+        background-color 0.18s ease,
+        color 0.18s ease !important;
+}
+
+/* hover 与文章底部 Tag 一致 */
+#theme-onenav .notion-collection-view-tabs-content-item:hover {
+    background-color: #cb912f !important;
+    box-shadow: none !important;
+}
 /* 数据库 / collection 外层不要自己缩窄 */
 #theme-onenav .notion-collection,
 #theme-onenav .notion-collection-view,
@@ -724,6 +765,7 @@ const Style = () => {
     margin-right: 0 !important;
 
     box-sizing: border-box !important;
+    padding: 0 !important;
 }
 
 /* Gallery 本体固定两列 */
@@ -744,10 +786,14 @@ const Style = () => {
 
     box-sizing: border-box !important;
 }
-
-/* 不管 Notion 设置的是 small / medium / large，都统一 */
+/* Gallery 只有 1 张卡片时，横跨两列 */
+#theme-onenav .notion-gallery-grid > .notion-collection-card:only-child {
+    grid-column: 1 / -1;
+}
+/* 不管 Notion 设置的是 small / medium / large，都统一,顺便去掉横线 */
 #theme-onenav .notion-gallery-grid[class*='size-'] {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    border-top: none !important;
 }
 
 /* 每张卡只服从 grid 分配的宽度 */
