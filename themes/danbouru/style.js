@@ -522,6 +522,23 @@ const Style = () => {
         padding-top: 3rem;
     }
     }
+    /* Tag 页面：横向排列并自动换行 */
+    #theme-onenav #tags-list.danbouru-taxonomy-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 8px;
+
+    width: 100%;
+    max-width: 500px;
+    }
+
+    /* Tag 项目保持内容宽度，不拉伸 */
+    #theme-onenav #tags-list .danbouru-taxonomy-item {
+    width: auto;
+    flex: 0 0 auto;
+    }
     /* danbouru专用：Category / Tag 索引页共用结束 */
     /* =========================
     Archive

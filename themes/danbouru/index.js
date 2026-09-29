@@ -304,7 +304,7 @@ const LayoutSlug = props => {
       {!lock && (
         <div id='container'>
           {/* title */}
-          <h1 className='danbouru-page-title dark:text-gray-300'>s
+          <h1 className='danbouru-page-title dark:text-gray-300'>
             {siteConfig('POST_TITLE_ICON') && (
               <NotionIcon icon={post?.pageIcon} />
             )}
@@ -406,8 +406,8 @@ const LayoutArchive = props => {
   return (
     <div className='w-full'>
       <h1 className='danbouru-page-title dark:text-gray-300'>
-        <i className='mr-3 fas fa-archive' />
-        Archive
+        <i className='mr-3 fas fa-clock-rotate-left' />
+        时间封箱带 Archive
       </h1>
 
       <div className='pb-20'>
@@ -466,8 +466,8 @@ const LayoutCategoryIndex = props => {
     <>
       <div className='py-10'>
       <h1 className='danbouru-page-title dark:text-gray-300'>
-        <i className='mr-3 fas fa-folder' />
-        Categories
+        <i className='mr-3 fas fa-th' />
+        分装袋 Categories
       </h1>
 
         <div
@@ -509,7 +509,7 @@ const LayoutTagIndex = props => {
     <div className='w-full'>
       <h1 className='danbouru-page-title dark:text-gray-300'>
         <i className='mr-3 fas fa-tags' />
-        Tags
+        散落的毛 Tags
       </h1>
 
       <div
