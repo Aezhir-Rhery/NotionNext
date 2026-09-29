@@ -14,7 +14,7 @@ const Footer = ({ siteInfo }) => {
 
       <div className='flex justify-center'>
         <div>
-          <i className='text-xs mx-1 animate-pulse fas fa-heart' />
+          <i className='text-xs mx-1 animate-pulse fa-solid fa-paw' />
           <a
             href={siteConfig('LINK')}
             className='text-gray-500 dark:text-gray-300 '>
@@ -46,11 +46,11 @@ const Footer = ({ siteInfo }) => {
       <BeiAnGongAn />
 
       <span className='hidden busuanzi_container_site_pv'>
-        <i className='text-xs' />
+        <i className='text-xs fa-solid fa-dolly' />
         <span className='px-1 busuanzi_value_site_pv'> </span>{' '}
       </span>
       <span className='pl-2 hidden busuanzi_container_site_uv'>
-        <i className='text-xs' />{' '}
+        <i className='text-xs fa-solid fa-cat' />{' '}
         <span className='px-1 busuanzi_value_site_uv'> </span>{' '}
       </span>
       {/* <h1 className='pt-1'>{siteConfig('TITLE')}</h1> */}

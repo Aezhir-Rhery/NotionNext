@@ -23,6 +23,11 @@ const Style = () => {
     /*#top-nav {
         background-color: rgb(251 251 251 / 70%);
     }*/
+   /* danbouru专用：修改文章页正文宽度 */
+    #theme-onenav #container {
+    width: 100%;
+    max-width: 500px;
+    }
     /* danbouru专用：关闭 NotionNext 默认懒加载灰色动画 */
     .lazy-image-placeholder {
         background: transparent !important;
@@ -385,45 +390,229 @@ const Style = () => {
 
     /* danbouru专用：修改代码框结束 */
     /* danbouru专用：修改无序列表 */
-/* =========================
-   Danbouru：无序列表
-   ========================= */
+    /* =========================
+    Danbouru：无序列表
+    ========================= */
 
-/* 无序列表整体 */
-#theme-onenav .notion-list-disc {
-    margin-top: 0rem !important;
-    margin-bottom: 0rem !important;
-    padding-left: 1.4rem !important;
-}
+    /* 无序列表整体 */
+    #theme-onenav .notion-list-disc {
+        margin-top: 0rem !important;
+        margin-bottom: 0rem !important;
+        padding-left: 1.4rem !important;
+    }
 
-/* 每一项 */
-#theme-onenav .notion-list-disc > li {
-    margin-top: 0rem !important;
-    margin-bottom: 0rem !important;
-    line-height: 1.4rem !important;
-}
+    /* 每一项 */
+    #theme-onenav .notion-list-disc > li {
+        margin-top: 0rem !important;
+        margin-bottom: 0rem !important;
+        line-height: 1.4rem !important;
+    }
 
-/* 圆点改成姜黄色 */
-#theme-onenav .notion-list-disc > li::marker {
-    color: #cb912f !important;
-}
-#theme-onenav .notion-list-disc .notion-list-disc {
-    margin-top: 0rem !important;
-    margin-bottom: 0rem !important;
-}
-/* =========================
-   Danbouru：Checkbox
-   ========================= */
+    /* 圆点改成姜黄色 */
+    #theme-onenav .notion-list-disc > li::marker {
+        color: #cb912f !important;
+    }
+    #theme-onenav .notion-list-disc .notion-list-disc {
+        margin-top: 0rem !important;
+        margin-bottom: 0rem !important;
+    }
+    /* =========================
+    Danbouru：Checkbox
+    ========================= */
 
-#theme-onenav .notion-property-checkbox-checked {
+    #theme-onenav .notion-property-checkbox-checked {
+        background-color: #cb912f !important;
+        border-color: #cb912f !important;
+    }
+
+    /* 勾号保持白色 */
+    #theme-onenav .notion-property-checkbox-checked svg {
+        fill: #ffffff !important;
+    }
+    /* danbouru专用：修改无序列表结束 */
+    /* danbouru专用：控制文章底部信息 */
+    /* 文章底部信息：分类 / Tag 第一行，日期固定第二行 */
+    #theme-onenav .post-footer-meta::before {
+    content: '';
+    flex-basis: 100%;
+    width: 0;
+    height: 0;
+    order: 2;
+    }
+
+    #theme-onenav .post-footer-meta > span {
+    order: 1;
+    }
+
+    /* 两种日期放到第二行，并缩小字号 */
+    #theme-onenav .post-footer-meta > span:has(.fa-calendar-day),
+    #theme-onenav .post-footer-meta > span:has(.fa-pen) {
+    order: 3;
+    font-size: 12px;
+    margin-top: -15px;
+    }
+
+    /* 第一项日期左对齐 */
+    #theme-onenav .post-footer-meta > span:has(.fa-calendar-day) {
+    padding-left: 8px;
+    }
+
+    /* 隐藏“最后修改日期”的铅笔图标 */
+    #theme-onenav .post-footer-meta .fa-pen {
+    display: none;
+    }
+
+    /* 第二个日期前加入斜杠 */
+    #theme-onenav .post-footer-meta > span:has(.fa-pen)::before {
+    content: '/';
+    margin-right: 1rem;
+    color: inherit;
+    }
+    /* danbouru专用：控制文章底部信息结束 */
+    /* Category / Tag 索引页共用 */
+    #theme-onenav .danbouru-taxonomy-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+
+    background: transparent !important;
+    }
+
+    /* 单个 Category / Tag */
+    #theme-onenav .danbouru-taxonomy-item {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 5px 9px;
+    border-radius: 6px;
+
+    font-size: 15px;
+    line-height: 1.5;
+
+    color: inherit;
+    background: transparent;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.18s ease,
+        color 0.18s ease;
+    }
+
+    /* hover：与文章底部 Tag 统一 */
+    #theme-onenav .danbouru-taxonomy-item:hover {
     background-color: #cb912f !important;
-    border-color: #cb912f !important;
-}
+    color: #fff !important;
+    }
+    /* danbouru专用：Category / Tag 索引页共用开始 */
+    #theme-onenav .danbouru-taxonomy-item:hover * {
+    color: #fff !important;
+    }
 
-/* 勾号保持白色 */
-#theme-onenav .notion-property-checkbox-checked svg {
-    fill: #ffffff !important;
-}
+    #theme-onenav .danbouru-page-title {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    padding-top: 1rem;
+    margin-bottom: 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+    #theme-onenav .danbouru-page-title {
+        padding-top: 3rem;
+    }
+    }
+    /* danbouru专用：Category / Tag 索引页共用结束 */
+    /* =========================
+    Archive
+    ========================= */
+
+    /* 月份标题 */
+    #theme-onenav .danbouru-archive-month {
+    padding-top: 28px;
+    padding-bottom: 8px;
+
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 500;
+    }
+
+    /* 每个月下面的文章列表 */
+    #theme-onenav .danbouru-archive-posts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    }
+    #theme-onenav .danbouru-archive-posts > li {
+    margin: 0;
+    padding: 0;
+    }
+
+    /* 单篇归档文章：沿用首页 .card 的视觉语言 */
+    #theme-onenav .danbouru-archive-card {
+    display: block;
+    width: 200px;
+
+    padding: 11px 14px;
+
+    border: 2px solid #22222213;
+    border-radius: 8px;
+
+    box-shadow: 4px 4px 0 #22222213;
+
+    text-decoration: none !important;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
+    }
+
+    /* 和首页 card 一样的按压 hover */
+    #theme-onenav .danbouru-archive-card:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 #2222220c;
+    border-color: #cb912f;
+    }
+
+    /* 日期：作为卡片的小标题 */
+    #theme-onenav .danbouru-archive-date {
+    margin-bottom: 3px;
+
+    font-size: 11px;
+    line-height: 1.4;
+
+    color: #999;
+    }
+
+    /* 文章标题 */
+    #theme-onenav .danbouru-archive-title {
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 500;
+
+    color: #555;
+    }
+
+    /* 不让文章标题在 hover 时出现默认下划线 */
+    #theme-onenav .danbouru-archive-card:hover .danbouru-archive-title {
+    text-decoration: none;
+    }
+
+    /* Dark mode */
+    .dark #theme-onenav .danbouru-archive-date {
+    color: #888;
+    }
+
+    .dark #theme-onenav .danbouru-archive-title {
+    color: #ccc;
+    }
+
 
 
 

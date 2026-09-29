@@ -304,7 +304,7 @@ const LayoutSlug = props => {
       {!lock && (
         <div id='container'>
           {/* title */}
-          <h1 className='text-3xl pt-4 md:pt-12  dark:text-gray-300'>
+          <h1 className='danbouru-page-title dark:text-gray-300'>s
             {siteConfig('POST_TITLE_ICON') && (
               <NotionIcon icon={post?.pageIcon} />
             )}
@@ -402,9 +402,15 @@ const LayoutSearch = props => {
  */
 const LayoutArchive = props => {
   const { archivePosts } = props
+
   return (
-    <>
-      <div className='mb-10 pb-20 md:py-12 p-3  min-h-screen w-full'>
+    <div className='w-full'>
+      <h1 className='danbouru-page-title dark:text-gray-300'>
+        <i className='mr-3 fas fa-archive' />
+        Archive
+      </h1>
+
+      <div className='pb-20'>
         {Object.keys(archivePosts).map(archiveTitle => (
           <BlogArchiveItem
             key={archiveTitle}
@@ -413,7 +419,7 @@ const LayoutArchive = props => {
           />
         ))}
       </div>
-    </>
+    </div>
   )
 }
 
@@ -450,31 +456,35 @@ const Layout404 = props => {
 
 /**
  * 分类列表
+ * 不用{locale.COMMON.CATEGORY}，统一成英文
  */
 const LayoutCategoryIndex = props => {
   const { categoryOptions } = props
   const { locale } = useGlobal()
+
   return (
     <>
-      <div className='bg-white dark:bg-gray-700 py-10'>
-        <div className='dark:text-gray-200 mb-5'>
-          <i className='mr-4 fas fa-th' />
-          {locale.COMMON.CATEGORY}:
-        </div>
-        <div id='category-list' className='duration-200 flex flex-wrap'>
+      <div className='py-10'>
+      <h1 className='danbouru-page-title dark:text-gray-300'>
+        <i className='mr-3 fas fa-folder' />
+        Categories
+      </h1>
+
+        <div
+          id='category-list'
+          className='danbouru-taxonomy-list'
+        >
           {categoryOptions?.map(category => {
             return (
               <SmartLink
                 key={category.name}
                 href={`/category/${category.name}`}
                 passHref
-                legacyBehavior>
-                <div
-                  className={
-                    'hover:text-black dark:hover:text-white dark:text-gray-300 dark:hover:bg-gray-600 px-5 cursor-pointer py-2 hover:bg-gray-100'
-                  }>
-                  <i className='mr-4 fas fa-folder' />
-                  {category.name}({category.count})
+                legacyBehavior
+              >
+                <div className='danbouru-taxonomy-item'>
+                  <i className='mr-3 fas fa-folder' />
+                  {category.name} ({category.count})
                 </div>
               </SmartLink>
             )
@@ -496,17 +506,24 @@ const LayoutTagIndex = props => {
   const { tagOptions } = props
 
   return (
-    <div className='w-full max-w-7xl mx-auto mt-8'>
+    <div className='w-full'>
+      <h1 className='danbouru-page-title dark:text-gray-300'>
+        <i className='mr-3 fas fa-tags' />
+        Tags
+      </h1>
+
       <div
         id='tags-list'
-        className='flex flex-wrap gap-3'>
+        className='danbouru-taxonomy-list'
+      >
         {tagOptions?.map(tag => (
           <SmartLink
             key={tag.name}
             href={`/tag/${encodeURIComponent(tag.name)}`}
-            passHref>
-            <div className='cursor-pointer px-4 py-2 rounded-lg bg-white dark:bg-neutral-800 hover:bg-gray-100 dark:hover:bg-neutral-700 duration-200'>
-              <i className='mr-2 fas fa-tag' />
+            passHref
+          >
+            <div className='danbouru-taxonomy-item'>
+              <i className='mr-3 fas fa-tag' />
               {tag.name}
               {tag.count ? ` (${tag.count})` : ''}
             </div>
