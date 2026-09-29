@@ -714,7 +714,7 @@ const Style = () => {
     }
 
     .notion-collection-card-cover {
-        display: none;
+        /*为什么加上这一条啊？是gpt加的吗？ display: none; */
     }
 
     // 底色
