@@ -1,0 +1,7 @@
+name = "danbouru-notion-image-proxy"
+main = "worker.mjs"
+compatibility_date = "2026-07-22"
+
+routes = [
+  { pattern = "img.danbouru.cat-fish.net", custom_domain = true }
+]
