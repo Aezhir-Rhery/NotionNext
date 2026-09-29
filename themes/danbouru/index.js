@@ -20,6 +20,20 @@ import { ArticleLock } from './components/ArticleLock'
 import CONFIG from './config'
 import { Style } from './style'
 
+const getTitleIconUrl = icon => {
+  if (!icon?.startsWith('http')) return icon
+
+  // Notion 官方公共图标：保持原域名
+  if (icon.includes('/icons/')) {
+    return icon.replace(
+      'https://img.danbouru.cat-fish.net',
+      'https://www.notion.so'
+    )
+  }
+
+  return icon
+}
+
 const WWAds = dynamic(() => import('@/components/WWAds'), { ssr: false })
 const AdSlot = dynamic(() => import('@/components/GoogleAdsense').then(mod => mod.AdSlot), {
   ssr: false
@@ -305,8 +319,17 @@ const LayoutSlug = props => {
         <div id='container'>
           {/* title */}
           <h1 className='danbouru-page-title dark:text-gray-300'>
-            {siteConfig('POST_TITLE_ICON') && (
-              <NotionIcon icon={post?.pageIcon} />
+            {/* 不使用懒加载了，会妨碍图片反向代理 */}
+            {siteConfig('POST_TITLE_ICON') && post?.pageIcon && (
+              post.pageIcon.startsWith('http') ? (
+                <img
+                  src={getTitleIconUrl(post.pageIcon)}
+                  alt=''
+                  className='w-8 h-8 my-auto inline mr-1'
+                />
+              ) : (
+                <span className='mr-1'>{post.pageIcon}</span>
+              )
             )}
             {post?.title}
           </h1>

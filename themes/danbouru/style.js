@@ -708,19 +708,105 @@ const Style = () => {
             transition: none;
         }
     }
-    .notion-gallery-grid {
-        padding-left: 4px;
-        padding-right: 4px;
-    }
+/* =========================
+   Notion Gallery：统一 500px 内双列
+   ========================= */
 
-    .notion-collection-card-cover {
-        /*为什么加上这一条啊？是gpt加的吗？ display: none; */
-    }
+/* 数据库 / collection 外层不要自己缩窄 */
+#theme-onenav .notion-collection,
+#theme-onenav .notion-collection-view,
+#theme-onenav .notion-gallery {
+    width: 100% !important;
+    max-width: 500px !important;
+    min-width: 0 !important;
 
-    // 底色
-    .dark body{
-        background-color: black;
-    }
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Gallery 本体固定两列 */
+#theme-onenav .notion-gallery-grid {
+    display: grid !important;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-columns: minmax(0, 1fr) !important;
+
+    width: 100% !important;
+    max-width: 500px !important;
+    min-width: 0 !important;
+
+    gap: 12px !important;
+
+    margin: 0 !important;
+    padding: 4px !important;
+
+    box-sizing: border-box !important;
+}
+
+/* 不管 Notion 设置的是 small / medium / large，都统一 */
+#theme-onenav .notion-gallery-grid[class*='size-'] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+/* 每张卡只服从 grid 分配的宽度 */
+#theme-onenav .notion-collection-card {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    box-sizing: border-box !important;
+
+    border: 2px solid #22222213 !important;
+    border-radius: 8px !important;
+
+    box-shadow: 4px 4px 0 #22222213 !important;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease !important;
+}
+
+#theme-onenav .notion-collection-card:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 #2222220c !important;
+    border-color: #cb912f !important;
+}
+
+/* 封面统一比例 */
+#theme-onenav .notion-collection-card-cover {
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    aspect-ratio: 4 / 3;
+
+    overflow: hidden;
+}
+
+#theme-onenav .notion-collection-card-cover img {
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+}
+
+/* 正文部分也不能撑宽 */
+#theme-onenav .notion-collection-card-body {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
 
 
       ${themeConsoleStyle('nav', CONFIG, { rootId: 'theme-onenav' })}

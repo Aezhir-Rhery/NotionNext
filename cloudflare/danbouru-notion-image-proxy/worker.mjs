@@ -82,9 +82,7 @@ export default {
 function isAllowedPath(pathname) {
   return (
     pathname.startsWith('/image/') ||
-    pathname.startsWith('/images/') ||
-    pathname.startsWith('/icons/') ||
-    pathname.startsWith('/emoji/')
+    pathname.startsWith('/images/')
   )
 }
 
