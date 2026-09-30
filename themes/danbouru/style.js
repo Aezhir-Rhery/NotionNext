@@ -34,16 +34,78 @@ const Style = () => {
         background-image: none !important;
         animation: none !important;
     }
-    /* danbouru专用：文章页底部标签样式 */
-    .post-footer-meta .danbouru-footer-tag {
-        border-radius: 6px;
-    }
+/* =========================
+   文章底部信息
+   分类 / Tag / 日期 三行
+   ========================= */
 
-    .post-footer-meta .danbouru-footer-tag:hover {
-        background-color: #cb912f !important;
-        color: #fff !important;
-        box-shadow: none !important;
-    }
+#theme-onenav .post-footer-meta {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-start !important;
+
+    gap: 6px !important;
+}
+
+/* 三行全部占满一行 */
+#theme-onenav .post-footer-category,
+#theme-onenav .post-footer-tags,
+#theme-onenav .post-footer-date-row {
+    width: 100% !important;
+    flex: none !important;
+}
+
+/* 分类 */
+#theme-onenav .post-footer-category {
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Tag */
+#theme-onenav .post-footer-tags {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+}
+/* 三行图标统一占固定宽度 */
+#theme-onenav .post-footer-category > i,
+#theme-onenav .post-footer-tags > i,
+#theme-onenav .post-footer-date-row i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 18px;
+    min-width: 18px;
+
+    margin-right: 6px !important;
+    padding: 0 !important;
+
+    text-align: center;
+}
+
+/* 修改日期前的斜杠 */
+#theme-onenav .post-footer-date-edited::before {
+    content: '/';
+    margin: 0 1rem;
+}
+    /* 文章底部 Tag */
+#theme-onenav .post-footer-meta .danbouru-footer-tag {
+    border-radius: 6px;
+}
+
+/* Tag hover：姜黄色 */
+#theme-onenav .post-footer-meta .danbouru-footer-tag:hover {
+    background-color: #cb912f !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+/* 内部文字也变白 */
+#theme-onenav .post-footer-meta .danbouru-footer-tag:hover * {
+    color: #ffffff !important;
+}
 
 /* danbouru专用：Bookmark：做成和首页 .card 一样的交互 */
 #theme-onenav .notion-bookmark {
@@ -430,45 +492,7 @@ const Style = () => {
         fill: #ffffff !important;
     }
     /* danbouru专用：修改无序列表结束 */
-    /* danbouru专用：控制文章底部信息 */
-    /* 文章底部信息：分类 / Tag 第一行，日期固定第二行 */
-    #theme-onenav .post-footer-meta::before {
-    content: '';
-    flex-basis: 100%;
-    width: 0;
-    height: 0;
-    order: 2;
-    }
 
-    #theme-onenav .post-footer-meta > span {
-    order: 1;
-    }
-
-    /* 两种日期放到第二行，并缩小字号 */
-    #theme-onenav .post-footer-meta > span:has(.fa-calendar-day),
-    #theme-onenav .post-footer-meta > span:has(.fa-pen) {
-    order: 3;
-    font-size: 12px;
-    margin-top: -15px;
-    }
-
-    /* 第一项日期左对齐 */
-    #theme-onenav .post-footer-meta > span:has(.fa-calendar-day) {
-    padding-left: 8px;
-    }
-
-    /* 隐藏“最后修改日期”的铅笔图标 */
-    #theme-onenav .post-footer-meta .fa-pen {
-    display: none;
-    }
-
-    /* 第二个日期前加入斜杠 */
-    #theme-onenav .post-footer-meta > span:has(.fa-pen)::before {
-    content: '/';
-    margin-right: 1rem;
-    color: inherit;
-    }
-    /* danbouru专用：控制文章底部信息结束 */
     /* Category / Tag 索引页共用 */
     #theme-onenav .danbouru-taxonomy-list {
     display: flex;

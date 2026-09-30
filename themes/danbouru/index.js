@@ -358,34 +358,35 @@ const LayoutSlug = props => {
               </div> */}
               <hr className='my-8 border-gray-200 dark:border-gray-700' />
               <div className='post-footer-meta text-sm text-gray-500 dark:text-gray-400 flex flex-wrap items-center gap-x-4 gap-y-2'>
+                {/* 创建日期+修改日期 */}
+                <div className='post-footer-date-row'>
+                  {post?.publishDay && (
+                    <span className='post-footer-date inline-flex items-center'>
+                      <i className='fa-solid fa-clock-rotate-left' />
+                      {post.publishDay}
+                    </span>
+                  )}
+
+                  {post?.lastEditedDay && (
+                    <span className='post-footer-date post-footer-date-edited inline-flex items-center'>
+                      {post.lastEditedDay}
+                    </span>
+                  )}
+                </div>
                 {/* 分类 */}
                 {post?.category && (
-                  <span className='inline-flex items-center'>
-                    <i />
+                  <span className='post-footer-category inline-flex items-center'>
+                    <i className='fa-solid fa-table-list' />
                     <CategoryItem category={post.category} noHover />
                   </span>
                 )}
                 {/* 标签 */}
                 {post?.tagItems?.length > 0 && (
-                  <span className='inline-flex items-center flex-wrap'>
+                  <span className='post-footer-tags inline-flex items-center flex-wrap'>
                     <i className='fas fa-tags mr-1.5' />
                     {post.tagItems.map(tag => (
                       <TagItemMini key={tag.name} tag={tag} footerStyle />
                     ))}
-                  </span>
-                )}
-                {/* 创建日期 */}
-                {post?.publishDay && (
-                  <span className='inline-flex items-center'>
-                    <i className='fas fa-calendar-day mr-1.5' />
-                    {post.publishDay}
-                  </span>
-                )}
-                {/* 最后修改 */}
-                {post?.lastEditedDay && (
-                  <span className='inline-flex items-center'>
-                    <i className='fas fa-pen mr-1.5' />
-                    {post.lastEditedDay}
                   </span>
                 )}
               </div>
