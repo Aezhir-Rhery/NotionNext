@@ -806,7 +806,7 @@ const Style = () => {
     gap: 12px !important;
 
     margin: 0 !important;
-    padding: 4px !important;
+    padding: 4px 4px 4px 0 !important;
 
     box-sizing: border-box !important;
 }
