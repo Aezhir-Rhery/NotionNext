@@ -6,6 +6,8 @@ import { themeConsoleStyle } from '@/lib/themeConsoleStyle'
  * 此处不支持tailwindCSS的 @apply 语法
  * @returns
  */
+/* 全局CSS是叫GPT整理的，有啥问题它可以负责 */
+/* 叫GPT写的，写的很烂，后续再优化——不是，VS你怎么骂人啊，要不你写个？ */
 const Style = () => {
   return <style jsx global>{`
     body {
@@ -13,6 +15,7 @@ const Style = () => {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         -webkit-font-smoothing: antialiased;
     }
+    /* 主题专属变量 */
     #theme-danbouru {
         --danbouru-accent: #cb912f;
         --danbouru-line: #22222213;
