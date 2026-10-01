@@ -34,6 +34,59 @@ const Style = () => {
         background-image: none !important;
         animation: none !important;
     }
+#theme-onenav .notion-callout {
+    border-radius: 10px !important;
+    border-width: 2px !important;
+    border-style: solid !important;
+}
+
+#theme-onenav input[name='search'] {
+    border: 2px solid transparent !important;
+}
+
+#theme-onenav input[name='search']:focus {
+    box-shadow: none !important;
+    border-color: #cb912f !important;
+}
+        /* =========================
+   Notion Inline Code
+   ========================= */
+
+#theme-onenav .notion-inline-code {
+    display: inline-flex !important;
+    align-items: center !important;
+
+    box-sizing: border-box !important;
+
+    padding: 2px 5px !important;
+
+    border-radius: 6px !important;
+
+    background-color: rgba(135, 131, 120, 0.12) !important;
+
+    color: #eb5757 !important;
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        Menlo,
+        monospace !important;
+
+    font-size: 0.9em !important;
+    line-height: 1.4 !important;
+
+    vertical-align: middle !important;
+
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+
+    box-shadow: none !important;
+    border: none !important;
+
+    margin:0 5px;
+}
 /* =========================
    文章底部信息
    分类 / Tag / 日期 三行
@@ -462,13 +515,19 @@ const Style = () => {
         margin-bottom: 0rem !important;
         padding-left: 1.4rem !important;
     }
+/* 无序列表 + 有序列表，所有层级统一 */
+#theme-onenav .notion-list-disc li,
+#theme-onenav .notion-list-numbered li {
+    line-height: 1.6rem !important;
 
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
     /* 每一项 */
-    #theme-onenav .notion-list-disc > li {
-        margin-top: 0rem !important;
-        margin-bottom: 0rem !important;
-        line-height: 1.4rem !important;
-    }
+#theme-onenav .notion-list-disc > li {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
 
     /* 圆点改成姜黄色 */
     #theme-onenav .notion-list-disc > li::marker {
@@ -478,20 +537,87 @@ const Style = () => {
         margin-top: 0rem !important;
         margin-bottom: 0rem !important;
     }
+#theme-onenav .notion-list-disc .notion-list-disc > li {
+    list-style-type: circle !important;
+}
+
+#theme-onenav .notion-list-disc .notion-list-disc > li::marker {
+    color: #cb912f !important;
+}
     /* =========================
     Danbouru：Checkbox
     ========================= */
+/* =========================
+   Danbouru：Checkbox
+   ========================= */
 
-    #theme-onenav .notion-property-checkbox-checked {
-        background-color: #cb912f !important;
-        border-color: #cb912f !important;
-    }
+/* 外层只负责承载，不画框 */
+#theme-onenav .notion-property-checkbox {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 
-    /* 勾号保持白色 */
-    #theme-onenav .notion-property-checkbox-checked svg {
-        fill: #ffffff !important;
-    }
-    /* danbouru专用：修改无序列表结束 */
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* 未选中 */
+#theme-onenav .notion-property-checkbox-unchecked {
+    width: 16px !important;
+    height: 16px !important;
+
+    box-sizing: border-box !important;
+
+    border: 2px solid #22222213 !important;
+    border-radius: 5px !important;
+
+    background: transparent !important;
+}
+
+/* 已选中 */
+#theme-onenav .notion-property-checkbox-checked {
+    width: 16px !important;
+    height: 16px !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    box-sizing: border-box !important;
+
+    padding: 2px !important;
+
+    border: 2px solid #cb912f !important;
+    border-radius: 5px !important;
+
+    background-color: #cb912f !important;
+}
+
+/* 白色勾勾 */
+#theme-onenav .notion-property-checkbox-checked svg {
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    margin: 0 !important;
+
+    fill: #ffffff !important;
+
+    transform: none !important;
+}
+    /* Todo：checkbox 始终和第一行文字对齐 */
+#theme-onenav .notion-to-do-item {
+    align-items: flex-start !important;
+}
+
+/* checkbox 外层稍微下移一点，和第一行文字视觉居中 */
+#theme-onenav .notion-property-checkbox {
+    margin-top: 8px !important;
+}
+    /* danbouru专用：checkbox结束 */
 
     /* Category / Tag 索引页共用 */
     #theme-onenav .danbouru-taxonomy-list {
