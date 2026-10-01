@@ -1235,6 +1235,70 @@ const Style = () => {
     :is(.notion-text, .notion-list-disc, .notion-list-numbered, .notion-quote) a:hover {
         background-color: var(--danbouru-accent-soft) !important;
     }
+    /* =========================
+    Notion File：附件
+    ========================= */
+
+    #theme-danbouru .notion-file-link {
+        display: flex !important;
+        align-items: center !important;
+
+        border-radius: var(--danbouru-radius-sm) !important;
+
+        text-decoration: none !important;
+
+        overflow: hidden;
+    }
+
+    /* 隐藏 react-notion-x 默认附件 SVG */
+    #theme-danbouru .notion-file-link .notion-file-icon {
+        display: none !important;
+    }
+
+    /* 使用 Font Awesome 图标替代 */
+    #theme-danbouru .notion-file-link::before {
+        content: '\f0c6'; /* 示例：file 图标，换成你自己选的 unicode */
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 1.2em;
+        min-width: 1.2em;
+
+        margin-right: 8px;
+
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        line-height: 1;
+
+        color: var(--danbouru-accent);
+
+        flex: 0 0 auto;
+    }
+
+    /* 文件文字区域垂直居中 */
+    #theme-danbouru .notion-file-info {
+        display: flex !important;
+        align-items: center !important;
+
+        min-width: 0;
+    }
+
+    /* 文件标题 */
+    #theme-danbouru .notion-file-title {
+        line-height: 1.5 !important;
+        text-decoration: none !important;
+    }
+
+    /* =========================
+    Danbouru：有序列表序号
+    ========================= */
+    #theme-danbouru .notion-list-numbered li::marker {
+        color: var(--danbouru-accent) !important;
+        font-weight: 700 !important;
+    }
+
     /* 可自定义的css部分结束 */
 
     ${themeConsoleStyle('nav', CONFIG, { rootId: 'theme-danbouru' })}
