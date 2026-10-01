@@ -13,7 +13,7 @@ const Style = () => {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         -webkit-font-smoothing: antialiased;
     }
-    #theme-onenav {
+    #theme-danbouru {
         --danbouru-accent: #cb912f;
         --danbouru-line: #22222213;
         --danbouru-shadow-clear: #2222220c;
@@ -32,7 +32,7 @@ const Style = () => {
         background-color: rgb(251 251 251 / 70%);
     }*/
     /* danbouru专用：修改文章页正文宽度 */
-    #theme-onenav #container {
+    #theme-danbouru #container {
         width: 100%;
         max-width: 500px;
     }
@@ -42,17 +42,17 @@ const Style = () => {
         background-image: none !important;
         animation: none !important;
     }
-    #theme-onenav .notion-callout {
+    #theme-danbouru .notion-callout {
         border-radius: 10px !important;
         border-width: 2px !important;
         border-style: solid !important;
     }
 
-    #theme-onenav input[name='search'] {
+    #theme-danbouru input[name='search'] {
         border: 2px solid transparent !important;
     }
 
-    #theme-onenav input[name='search']:focus {
+    #theme-danbouru input[name='search']:focus {
         box-shadow: none !important;
         border-color: var(--danbouru-accent) !important;
     }
@@ -60,7 +60,7 @@ const Style = () => {
        Notion Inline Code
        ========================= */
 
-    #theme-onenav .notion-inline-code {
+    #theme-danbouru .notion-inline-code {
         display: inline-flex !important;
         align-items: center !important;
 
@@ -100,7 +100,7 @@ const Style = () => {
        分类 / Tag / 日期 三行
        ========================= */
 
-    #theme-onenav .post-footer-meta {
+    #theme-danbouru .post-footer-meta {
         display: flex !important;
         flex-direction: column !important;
         flex-wrap: nowrap !important;
@@ -110,29 +110,29 @@ const Style = () => {
     }
 
     /* 三行全部占满一行 */
-    #theme-onenav .post-footer-category,
-    #theme-onenav .post-footer-tags,
-    #theme-onenav .post-footer-date-row {
+    #theme-danbouru .post-footer-category,
+    #theme-danbouru .post-footer-tags,
+    #theme-danbouru .post-footer-date-row {
         width: 100% !important;
         flex: none !important;
     }
 
     /* 分类 */
-    #theme-onenav .post-footer-category {
+    #theme-danbouru .post-footer-category {
         display: flex !important;
         align-items: center !important;
     }
 
     /* Tag */
-    #theme-onenav .post-footer-tags {
+    #theme-danbouru .post-footer-tags {
         display: flex !important;
         align-items: center !important;
         flex-wrap: wrap !important;
     }
     /* 三行图标统一占固定宽度 */
-    #theme-onenav .post-footer-category > i,
-    #theme-onenav .post-footer-tags > i,
-    #theme-onenav .post-footer-date-row i {
+    #theme-danbouru .post-footer-category > i,
+    #theme-danbouru .post-footer-tags > i,
+    #theme-danbouru .post-footer-date-row i {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -147,28 +147,28 @@ const Style = () => {
     }
 
     /* 修改日期前的斜杠 */
-    #theme-onenav .post-footer-date-edited::before {
+    #theme-danbouru .post-footer-date-edited::before {
         content: '/';
         margin: 0 1rem;
     }
     /* 文章底部 Tag */
-    #theme-onenav .post-footer-meta .danbouru-footer-tag {
+    #theme-danbouru .post-footer-meta .danbouru-footer-tag {
         border-radius: var(--danbouru-radius-sm);
     }
 
     /* Tag hover：姜黄色 */
-    #theme-onenav .post-footer-meta .danbouru-footer-tag:hover {
+    #theme-danbouru .post-footer-meta .danbouru-footer-tag:hover {
         background-color: var(--danbouru-accent) !important;
         color: #ffffff !important;
         box-shadow: none !important;
     }
 
     /* 内部文字也变白 */
-    #theme-onenav .post-footer-meta .danbouru-footer-tag:hover * {
+    #theme-danbouru .post-footer-meta .danbouru-footer-tag:hover * {
         color: #ffffff !important;
     }
     /* Bookmark：和首页 .card 保持一致 */
-    #theme-onenav .notion-bookmark {
+    #theme-danbouru .notion-bookmark {
         cursor: pointer;
 
         /* 圆角 */
@@ -190,7 +190,7 @@ const Style = () => {
             border-color 0.18s ease !important;
     }
 
-    #theme-onenav .notion-bookmark:hover {
+    #theme-danbouru .notion-bookmark:hover {
         transform: translate(2px, 2px);
         box-shadow: 0 0 0 var(--danbouru-shadow-clear) !important;
         border-color: var(--danbouru-accent) !important;
@@ -198,13 +198,13 @@ const Style = () => {
     }
 
     /* hover 不改变文字颜色 */
-    #theme-onenav .notion-bookmark:hover,
-    #theme-onenav .notion-bookmark:hover * {
+    #theme-danbouru .notion-bookmark:hover,
+    #theme-danbouru .notion-bookmark:hover * {
         color: inherit !important;
     }
 
     @media (prefers-reduced-motion: reduce) {
-        #theme-onenav .notion-bookmark {
+        #theme-danbouru .notion-bookmark {
             transition: none !important;
         }
     }
@@ -215,7 +215,7 @@ const Style = () => {
        ================================================== */
 
     /* 整个代码框外壳 */
-    #theme-onenav .code-toolbar {
+    #theme-danbouru .code-toolbar {
         position: relative !important;
 
         display: flex !important;
@@ -239,8 +239,8 @@ const Style = () => {
     }
 
     /* 清掉可能造成底部渐变 / 阴影的伪元素 */
-    #theme-onenav .code-toolbar::before,
-    #theme-onenav .code-toolbar::after {
+    #theme-danbouru .code-toolbar::before,
+    #theme-danbouru .code-toolbar::after {
         content: none !important;
         display: none !important;
         background: none !important;
@@ -251,7 +251,7 @@ const Style = () => {
        顶部工具栏
        ================================================== */
 
-    #theme-onenav .code-toolbar > .toolbar {
+    #theme-danbouru .code-toolbar > .toolbar {
         order: 1 !important;
 
         position: static !important;
@@ -288,13 +288,13 @@ const Style = () => {
     }
 
     /* 防止 Prism hover 才显示 */
-    #theme-onenav .code-toolbar:hover > .toolbar {
+    #theme-danbouru .code-toolbar:hover > .toolbar {
         opacity: 1 !important;
         visibility: visible !important;
     }
 
     /* toolbar 每一项 */
-    #theme-onenav .code-toolbar > .toolbar .toolbar-item {
+    #theme-danbouru .code-toolbar > .toolbar .toolbar-item {
         display: flex !important;
         align-items: center !important;
 
@@ -307,7 +307,7 @@ const Style = () => {
     }
 
     /* Plain text */
-    #theme-onenav .code-toolbar > .toolbar .toolbar-item > span {
+    #theme-danbouru .code-toolbar > .toolbar .toolbar-item > span {
         margin: 0 !important;
         padding: 0 !important;
 
@@ -323,7 +323,7 @@ const Style = () => {
     }
 
     /* Prism 自带的 Copy 文字按钮 */
-    #theme-onenav .code-toolbar .copy-to-clipboard-button {
+    #theme-danbouru .code-toolbar .copy-to-clipboard-button {
         display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -349,7 +349,7 @@ const Style = () => {
             color 0.15s ease !important;
     }
 
-    #theme-onenav .code-toolbar .copy-to-clipboard-button:hover {
+    #theme-danbouru .code-toolbar .copy-to-clipboard-button:hover {
         background: var(--danbouru-accent) !important;
         color: #ffffff !important;
     }
@@ -358,7 +358,7 @@ const Style = () => {
        真正的代码区域
        ================================================== */
 
-    #theme-onenav .code-toolbar > pre.notion-code {
+    #theme-danbouru .code-toolbar > pre.notion-code {
         order: 2 !important;
 
         position: relative !important;
@@ -391,7 +391,7 @@ const Style = () => {
     }
 
     /* 真正的代码文字 */
-    #theme-onenav .code-toolbar > pre.notion-code > code {
+    #theme-danbouru .code-toolbar > pre.notion-code > code {
         display: block !important;
 
         width: 100% !important;
@@ -415,8 +415,8 @@ const Style = () => {
     }
 
     /* 清掉 pre 自己可能产生的阴影/渐变 */
-    #theme-onenav .code-toolbar > pre.notion-code::before,
-    #theme-onenav .code-toolbar > pre.notion-code::after {
+    #theme-danbouru .code-toolbar > pre.notion-code::before,
+    #theme-danbouru .code-toolbar > pre.notion-code::after {
         content: none !important;
         display: none !important;
 
@@ -428,7 +428,7 @@ const Style = () => {
        隐藏 pre 内部重复的 Copy SVG
        ================================================== */
 
-    #theme-onenav .code-toolbar .notion-code-copy {
+    #theme-danbouru .code-toolbar .notion-code-copy {
         display: none !important;
     }
 
@@ -436,41 +436,41 @@ const Style = () => {
        深色模式
        ================================================== */
 
-    .dark #theme-onenav .code-toolbar {
+    .dark #theme-danbouru .code-toolbar {
         background: #2b2b2b !important;
         border-color: #424242 !important;
         box-shadow: none !important;
     }
 
-    .dark #theme-onenav .code-toolbar > .toolbar {
+    .dark #theme-danbouru .code-toolbar > .toolbar {
         background: #333333 !important;
         border-bottom-color: #434343 !important;
 
         color: #b8b8b8 !important;
     }
 
-    .dark #theme-onenav .code-toolbar > .toolbar .toolbar-item > span {
+    .dark #theme-danbouru .code-toolbar > .toolbar .toolbar-item > span {
         background: transparent !important;
         box-shadow: none !important;
         color: #b8b8b8 !important;
     }
 
-    .dark #theme-onenav .code-toolbar .copy-to-clipboard-button {
+    .dark #theme-danbouru .code-toolbar .copy-to-clipboard-button {
         color: #b8b8b8 !important;
     }
 
-    .dark #theme-onenav .code-toolbar .copy-to-clipboard-button:hover {
+    .dark #theme-danbouru .code-toolbar .copy-to-clipboard-button:hover {
         background: var(--danbouru-accent) !important;
         color: #ffffff !important;
     }
 
-    .dark #theme-onenav .code-toolbar > pre.notion-code {
+    .dark #theme-danbouru .code-toolbar > pre.notion-code {
         background: #2b2b2b !important;
     }
 
     /* 减少动画 */
     @media (prefers-reduced-motion: reduce) {
-        #theme-onenav .code-toolbar .copy-to-clipboard-button {
+        #theme-danbouru .code-toolbar .copy-to-clipboard-button {
             transition: none !important;
         }
     }
@@ -482,28 +482,28 @@ const Style = () => {
        ========================= */
 
     /* 无序列表整体 */
-    #theme-onenav .notion-list-disc {
+    #theme-danbouru .notion-list-disc {
         margin-top: 0rem !important;
         margin-bottom: 0rem !important;
         padding-left: 1.4rem !important;
     }
     /* 无序列表 + 有序列表，所有层级统一 */
-    #theme-onenav .notion-list-disc li,
-    #theme-onenav .notion-list-numbered li {
+    #theme-danbouru .notion-list-disc li,
+    #theme-danbouru .notion-list-numbered li {
         line-height: 1.6rem !important;
 
         margin-top: 0 !important;
         margin-bottom: 0 !important;
     }
     /* 圆点改成姜黄色 */
-    #theme-onenav .notion-list-disc > li::marker {
+    #theme-danbouru .notion-list-disc > li::marker {
         color: var(--danbouru-accent) !important;
     }
-    #theme-onenav .notion-list-disc .notion-list-disc {
+    #theme-danbouru .notion-list-disc .notion-list-disc {
         margin-top: 0rem !important;
         margin-bottom: 0rem !important;
     }
-    #theme-onenav .notion-list-disc .notion-list-disc > li {
+    #theme-danbouru .notion-list-disc .notion-list-disc > li {
         list-style-type: circle !important;
     }
 
@@ -512,7 +512,7 @@ const Style = () => {
        ========================= */
 
     /* 外层只负责承载，不画框 */
-    #theme-onenav .notion-property-checkbox {
+    #theme-danbouru .notion-property-checkbox {
         display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -525,7 +525,7 @@ const Style = () => {
     }
 
     /* 未选中 */
-    #theme-onenav .notion-property-checkbox-unchecked {
+    #theme-danbouru .notion-property-checkbox-unchecked {
         width: 16px !important;
         height: 16px !important;
 
@@ -538,7 +538,7 @@ const Style = () => {
     }
 
     /* 已选中 */
-    #theme-onenav .notion-property-checkbox-checked {
+    #theme-danbouru .notion-property-checkbox-checked {
         width: 16px !important;
         height: 16px !important;
 
@@ -557,7 +557,7 @@ const Style = () => {
     }
 
     /* 白色勾勾 */
-    #theme-onenav .notion-property-checkbox-checked svg {
+    #theme-danbouru .notion-property-checkbox-checked svg {
         display: block !important;
 
         width: 100% !important;
@@ -570,13 +570,13 @@ const Style = () => {
         transform: none !important;
     }
     /* Todo：checkbox 始终和第一行文字对齐 */
-    #theme-onenav .notion-to-do-item {
+    #theme-danbouru .notion-to-do-item {
         align-items: flex-start !important;
     }
     /* danbouru专用：checkbox结束 */
 
     /* Category / Tag 索引页共用 */
-    #theme-onenav .danbouru-taxonomy-list {
+    #theme-danbouru .danbouru-taxonomy-list {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -586,7 +586,7 @@ const Style = () => {
     }
 
     /* 单个 Category / Tag */
-    #theme-onenav .danbouru-taxonomy-item {
+    #theme-danbouru .danbouru-taxonomy-item {
         display: inline-flex;
         align-items: center;
 
@@ -607,16 +607,16 @@ const Style = () => {
     }
 
     /* hover：与文章底部 Tag 统一 */
-    #theme-onenav .danbouru-taxonomy-item:hover {
+    #theme-danbouru .danbouru-taxonomy-item:hover {
         background-color: var(--danbouru-accent) !important;
         color: #fff !important;
     }
     /* danbouru专用：Category / Tag 索引页共用开始 */
-    #theme-onenav .danbouru-taxonomy-item:hover * {
+    #theme-danbouru .danbouru-taxonomy-item:hover * {
         color: #fff !important;
     }
 
-    #theme-onenav .danbouru-page-title {
+    #theme-danbouru .danbouru-page-title {
         display: flex;
         align-items: center;
         gap: 6px;
@@ -627,7 +627,7 @@ const Style = () => {
         margin-bottom: 1.25rem;
     }
 
-    #theme-onenav .danbouru-page-title > img {
+    #theme-danbouru .danbouru-page-title > img {
         width: 32px;
         height: 32px;
         flex: 0 0 auto;
@@ -635,12 +635,12 @@ const Style = () => {
         object-fit: contain;
     }
     @media (min-width: 768px) {
-        #theme-onenav .danbouru-page-title {
+        #theme-danbouru .danbouru-page-title {
             padding-top: 3rem;
         }
     }
     /* Tag 页面：横向排列并自动换行 */
-    #theme-onenav #tags-list.danbouru-taxonomy-list {
+    #theme-danbouru #tags-list.danbouru-taxonomy-list {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -652,7 +652,7 @@ const Style = () => {
     }
 
     /* Tag 项目保持内容宽度，不拉伸 */
-    #theme-onenav #tags-list .danbouru-taxonomy-item {
+    #theme-danbouru #tags-list .danbouru-taxonomy-item {
         width: auto;
         flex: 0 0 auto;
     }
@@ -662,7 +662,7 @@ const Style = () => {
        ========================= */
 
     /* 月份标题 */
-    #theme-onenav .danbouru-archive-month {
+    #theme-danbouru .danbouru-archive-month {
         padding-top: 28px;
         padding-bottom: 8px;
 
@@ -672,7 +672,7 @@ const Style = () => {
     }
 
     /* 每个月下面的文章列表 */
-    #theme-onenav .danbouru-archive-posts {
+    #theme-danbouru .danbouru-archive-posts {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -682,13 +682,13 @@ const Style = () => {
         padding: 0;
         list-style: none;
     }
-    #theme-onenav .danbouru-archive-posts > li {
+    #theme-danbouru .danbouru-archive-posts > li {
         margin: 0;
         padding: 0;
     }
 
     /* 单篇归档文章：沿用首页 .card 的视觉语言 */
-    #theme-onenav .danbouru-archive-card {
+    #theme-danbouru .danbouru-archive-card {
         display: block;
         width: 200px;
 
@@ -708,14 +708,14 @@ const Style = () => {
     }
 
     /* 和首页 card 一样的按压 hover */
-    #theme-onenav .danbouru-archive-card:hover {
+    #theme-danbouru .danbouru-archive-card:hover {
         transform: translate(2px, 2px);
         box-shadow: 0 0 0 var(--danbouru-shadow-clear);
         border-color: var(--danbouru-accent);
     }
 
     /* 日期：作为卡片的小标题 */
-    #theme-onenav .danbouru-archive-date {
+    #theme-danbouru .danbouru-archive-date {
         margin-bottom: 3px;
 
         font-size: 11px;
@@ -725,7 +725,7 @@ const Style = () => {
     }
 
     /* 文章标题 */
-    #theme-onenav .danbouru-archive-title {
+    #theme-danbouru .danbouru-archive-title {
         font-size: 15px;
         line-height: 1.5;
         font-weight: 500;
@@ -734,16 +734,16 @@ const Style = () => {
     }
 
     /* 不让文章标题在 hover 时出现默认下划线 */
-    #theme-onenav .danbouru-archive-card:hover .danbouru-archive-title {
+    #theme-danbouru .danbouru-archive-card:hover .danbouru-archive-title {
         text-decoration: none;
     }
 
     /* Dark mode */
-    .dark #theme-onenav .danbouru-archive-date {
+    .dark #theme-danbouru .danbouru-archive-date {
         color: #888;
     }
 
-    .dark #theme-onenav .danbouru-archive-title {
+    .dark #theme-danbouru .danbouru-archive-title {
         color: #ccc;
     }
 
@@ -819,7 +819,7 @@ const Style = () => {
        ========================= */
 
     /* 去掉 active 状态原本的黑色下划线 */
-    #theme-onenav .notion-collection-view-tabs-content-item-active {
+    #theme-danbouru .notion-collection-view-tabs-content-item-active {
         border-bottom: none !important;
         box-shadow: none !important;
 
@@ -828,11 +828,11 @@ const Style = () => {
         background-color: var(--danbouru-hover-gray) !important;
     }
     /* 杀掉更多下划线 */
-    #theme-onenav .notion-collection-card * {
+    #theme-danbouru .notion-collection-card * {
         text-decoration: none !important;
     }
     /* 所有视图标签都使用同样的圆角 */
-    #theme-onenav .notion-collection-view-tabs-content-item {
+    #theme-danbouru .notion-collection-view-tabs-content-item {
         border-radius: var(--danbouru-radius-sm) !important;
 
         transition:
@@ -841,14 +841,14 @@ const Style = () => {
     }
 
     /* hover 与文章底部 Tag 一致 */
-    #theme-onenav .notion-collection-view-tabs-content-item:hover {
+    #theme-danbouru .notion-collection-view-tabs-content-item:hover {
         background-color: var(--danbouru-accent) !important;
         box-shadow: none !important;
     }
     /* 数据库 / collection 外层不要自己缩窄 */
-    #theme-onenav .notion-collection,
-    #theme-onenav .notion-collection-view,
-    #theme-onenav .notion-gallery {
+    #theme-danbouru .notion-collection,
+    #theme-danbouru .notion-collection-view,
+    #theme-danbouru .notion-gallery {
         width: 100% !important;
         max-width: 500px !important;
         min-width: 0 !important;
@@ -861,7 +861,7 @@ const Style = () => {
     }
 
     /* Gallery 本体固定两列 */
-    #theme-onenav .notion-gallery-grid {
+    #theme-danbouru .notion-gallery-grid {
         display: grid !important;
 
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -879,17 +879,17 @@ const Style = () => {
         box-sizing: border-box !important;
     }
     /* Gallery 只有 1 张卡片时，横跨两列 */
-    #theme-onenav .notion-gallery-grid > .notion-collection-card:only-child {
+    #theme-danbouru .notion-gallery-grid > .notion-collection-card:only-child {
         grid-column: 1 / -1;
     }
     /* 不管 Notion 设置的是 small / medium / large，都统一,顺便去掉横线 */
-    #theme-onenav .notion-gallery-grid[class*='size-'] {
+    #theme-danbouru .notion-gallery-grid[class*='size-'] {
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
         border-top: none !important;
     }
 
     /* 每张卡只服从 grid 分配的宽度 */
-    #theme-onenav .notion-collection-card {
+    #theme-danbouru .notion-collection-card {
         display: block !important;
 
         width: 100% !important;
@@ -912,14 +912,14 @@ const Style = () => {
             border-color 0.18s ease !important;
     }
 
-    #theme-onenav .notion-collection-card:hover {
+    #theme-danbouru .notion-collection-card:hover {
         transform: translate(2px, 2px);
         box-shadow: 0 0 0 var(--danbouru-shadow-clear) !important;
         border-color: var(--danbouru-accent) !important;
     }
 
     /* 封面统一比例 */
-    #theme-onenav .notion-collection-card-cover {
+    #theme-danbouru .notion-collection-card-cover {
         display: block !important;
 
         width: 100% !important;
@@ -930,7 +930,7 @@ const Style = () => {
         overflow: hidden;
     }
 
-    #theme-onenav .notion-collection-card-cover img {
+    #theme-danbouru .notion-collection-card-cover img {
         display: block !important;
 
         width: 100% !important;
@@ -940,7 +940,7 @@ const Style = () => {
     }
 
     /* 正文部分也不能撑宽 */
-    #theme-onenav .notion-collection-card-body {
+    #theme-danbouru .notion-collection-card-body {
         width: 100% !important;
         min-width: 0 !important;
         box-sizing: border-box !important;
@@ -950,7 +950,7 @@ const Style = () => {
        ========================= */
 
     /* 每一条列表 */
-    #theme-onenav .notion-list-item {
+    #theme-danbouru .notion-list-item {
         display: flex !important;
         align-items: center !important;
 
@@ -968,15 +968,15 @@ const Style = () => {
     }
 
     /* 去掉标题、日期以及内部元素的下划线 */
-    #theme-onenav .notion-list-item,
-    #theme-onenav .notion-list-item:hover,
-    #theme-onenav .notion-list-item *,
-    #theme-onenav .notion-list-item:hover * {
+    #theme-danbouru .notion-list-item,
+    #theme-danbouru .notion-list-item:hover,
+    #theme-danbouru .notion-list-item *,
+    #theme-danbouru .notion-list-item:hover * {
         text-decoration: none !important;
     }
 
     /* 标题区域：icon + 标题文字垂直居中 */
-    #theme-onenav .notion-list-item-title {
+    #theme-danbouru .notion-list-item-title {
         display: flex !important;
         align-items: center !important;
 
@@ -984,7 +984,7 @@ const Style = () => {
     }
 
     /* 标题 icon */
-    #theme-onenav .notion-list-item-title .notion-page-icon-inline {
+    #theme-danbouru .notion-list-item-title .notion-page-icon-inline {
         display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -993,7 +993,7 @@ const Style = () => {
     }
 
     /* icon 图片本身 */
-    #theme-onenav .notion-list-item-title .notion-page-title-icon {
+    #theme-danbouru .notion-list-item-title .notion-page-title-icon {
         display: block !important;
 
         margin: 0 !important;
@@ -1001,7 +1001,7 @@ const Style = () => {
     }
 
     /* 标题文字 */
-    #theme-onenav .notion-list-item-title .notion-property-title {
+    #theme-danbouru .notion-list-item-title .notion-property-title {
         display: inline-flex !important;
         align-items: center !important;
 
@@ -1009,7 +1009,7 @@ const Style = () => {
     }
 
     /* 右侧属性区域 */
-    #theme-onenav .notion-list-item-body {
+    #theme-danbouru .notion-list-item-body {
         display: flex !important;
         align-items: center !important;
 
@@ -1017,14 +1017,14 @@ const Style = () => {
     }
 
     /* 日期属性 */
-    #theme-onenav .notion-list-item-property {
+    #theme-danbouru .notion-list-item-property {
         display: flex !important;
         align-items: center !important;
     }
 
     /* Created time：灰色、小字号，与标题垂直居中 */
-    #theme-onenav .notion-property-created_time,
-    #theme-onenav .notion-property-last_edited_time {
+    #theme-danbouru .notion-property-created_time,
+    #theme-danbouru .notion-property-last_edited_time {
         display: inline-flex !important;
         align-items: center !important;
 
@@ -1041,7 +1041,7 @@ const Style = () => {
        ========================= */
 
     /* 整个页面引用 */
-    #theme-onenav .notion-page-link[class*='notion-block-'] {
+    #theme-danbouru .notion-page-link[class*='notion-block-'] {
         display: inline-flex !important;
         align-items: center !important;
 
@@ -1057,16 +1057,16 @@ const Style = () => {
     }
 
     /* 杀掉内部所有下划线 */
-    #theme-onenav .notion-page-link[class*='notion-block-'] *,
-    #theme-onenav .notion-page-link[class*='notion-block-']:hover,
-    #theme-onenav .notion-page-link[class*='notion-block-']:hover * {
+    #theme-danbouru .notion-page-link[class*='notion-block-'] *,
+    #theme-danbouru .notion-page-link[class*='notion-block-']:hover,
+    #theme-danbouru .notion-page-link[class*='notion-block-']:hover * {
         text-decoration: none !important;
         border-bottom: none !important;
         box-shadow: none !important;
     }
 
     /* icon + 标题文字 */
-    #theme-onenav .notion-page-link[class*='notion-block-'] .notion-page-title {
+    #theme-danbouru .notion-page-link[class*='notion-block-'] .notion-page-title {
         display: inline-flex !important;
         align-items: center !important;
 
@@ -1077,7 +1077,7 @@ const Style = () => {
     }
 
     /* icon 外层 */
-    #theme-onenav .notion-page-link[class*='notion-block-'] .notion-page-icon-inline {
+    #theme-danbouru .notion-page-link[class*='notion-block-'] .notion-page-icon-inline {
         display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -1086,7 +1086,7 @@ const Style = () => {
     }
 
     /* icon 图片 */
-    #theme-onenav .notion-page-link[class*='notion-block-'] .notion-page-title-icon {
+    #theme-danbouru .notion-page-link[class*='notion-block-'] .notion-page-title-icon {
         display: block !important;
 
         margin: 0 !important;
@@ -1094,7 +1094,7 @@ const Style = () => {
     }
 
     /* 标题 */
-    #theme-onenav .notion-page-link[class*='notion-block-'] .notion-page-title-text {
+    #theme-danbouru .notion-page-link[class*='notion-block-'] .notion-page-title-text {
         display: inline-flex !important;
         align-items: center !important;
 
@@ -1105,11 +1105,11 @@ const Style = () => {
     }
 
     /* hover：和刚才 List 一样保留灰色 */
-    #theme-onenav .notion-page-link[class*='notion-block-']:hover {
+    #theme-danbouru .notion-page-link[class*='notion-block-']:hover {
         background-color: var(--danbouru-hover-gray) !important;
         border-radius: var(--danbouru-radius-sm) !important;
     }
-    ${themeConsoleStyle('nav', CONFIG, { rootId: 'theme-onenav' })}
+    ${themeConsoleStyle('nav', CONFIG, { rootId: 'theme-danbouru' })}
   `}</style>
 }
 

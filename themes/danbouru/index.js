@@ -139,7 +139,7 @@ const LayoutBase = props => {
 
       {/* 主题样式根基 */}
       <div
-        id='theme-onenav'
+        id='theme-danbouru'
         className={`${siteConfig('FONT_STYLE')} dark:bg-hexo-black-gray w-full h-screen min-h-screen justify-center dark:text-gray-300 scroll-smooth`}>
         {/* 端顶部导航栏 */}
         <TopNavBar {...props} />
