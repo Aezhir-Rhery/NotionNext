@@ -18,6 +18,7 @@ const Style = () => {
     /* 主题专属变量 */
     #theme-danbouru {
         --danbouru-accent: #cb912f;
+        --danbouru-accent-soft: #d0fff2;
         --danbouru-line: #22222213;
         --danbouru-shadow-clear: #2222220c;
         --danbouru-hover-gray: #f3f3f3;
@@ -1157,8 +1158,84 @@ const Style = () => {
         background-color: var(--danbouru-accent);
         border-radius: 999px;
     }
+    /* =========================
+    Notion Toggle：自定义折叠图标
+    ========================= */
 
+    /* summary 本体：让图标和文字垂直对齐 */
+    #theme-danbouru .notion-toggle > summary {
+        display: flex !important;
+        align-items: center !important;
 
+        list-style: none !important;
+
+        cursor: pointer;
+    }
+
+    /* 隐藏浏览器默认小三角 */
+    #theme-danbouru .notion-toggle > summary::-webkit-details-marker {
+        display: none !important;
+    }
+
+    #theme-danbouru .notion-toggle > summary::marker {
+        content: '' !important;
+    }
+
+    /* 自定义 Font Awesome 图标 */
+    #theme-danbouru .notion-toggle > summary::before {
+        content: '\f0a9'; /* 这里换成你想要的 FA unicode */
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 1em;
+        height: 1em;
+
+        margin-right: 6px;
+
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        line-height: 1;
+
+        color: var(--danbouru-accent);
+
+        flex: 0 0 auto;
+
+        transform: rotate(0deg);
+        transform-origin: center;
+
+        transition: transform 0.18s ease;
+    }
+
+    /* 打开时，同一张图顺时针旋转 90° */
+    #theme-danbouru .notion-toggle[open] > summary::before {
+        transform: rotate(90deg);
+    }
+
+    /* =========================
+    文章正文链接，包括公告栏
+    ========================= */
+    #theme-danbouru :is(#article-wrapper, #announcement-content)
+    :is(.notion-text, .notion-list-disc, .notion-list-numbered, .notion-quote) a {
+        color: #000000 !important;
+        text-decoration: none !important;
+        border-bottom: none !important;
+        box-shadow: none !important;
+
+        background-image: linear-gradient(
+            transparent calc(100% - 8px),
+            var(--danbouru-accent-soft) 3px
+        ) !important;
+
+        background-repeat: no-repeat !important;
+    }
+
+    #theme-danbouru :is(#article-wrapper, #announcement-content)
+    :is(.notion-text, .notion-list-disc, .notion-list-numbered, .notion-quote) a:hover {
+        background-color: var(--danbouru-accent-soft) !important;
+    }
+    /* 可自定义的css部分结束 */
 
     ${themeConsoleStyle('nav', CONFIG, { rootId: 'theme-danbouru' })}
   `}</style>
