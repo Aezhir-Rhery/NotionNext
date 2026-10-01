@@ -58,8 +58,8 @@ const Style = () => {
     }
     #theme-danbouru .notion-callout {
         border-radius: 10px !important;
-        border-width: 2px !important;
-        border-style: solid !important;
+        border-width: inherit !important;
+        /* border-style: solid !important; */
     }
 
     #theme-danbouru input[name='search'] {
