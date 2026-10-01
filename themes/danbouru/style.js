@@ -877,7 +877,176 @@ const Style = () => {
     min-width: 0 !important;
     box-sizing: border-box !important;
 }
+/* =========================
+   Notion List：列表视图
+   ========================= */
 
+/* 每一条列表 */
+#theme-onenav .notion-list-item {
+    display: flex !important;
+    align-items: center !important;
+
+    width: 100% !important;
+    box-sizing: border-box !important;
+
+    border-radius: 6px !important;
+
+    text-decoration: none !important;
+
+    overflow: hidden;
+
+    transition:
+        background-color 0.18s ease !important;
+}
+
+/* 去掉标题、日期以及内部元素的下划线 */
+#theme-onenav .notion-list-item,
+#theme-onenav .notion-list-item:hover,
+#theme-onenav .notion-list-item *,
+#theme-onenav .notion-list-item:hover * {
+    text-decoration: none !important;
+}
+
+/* 标题区域：icon + 标题文字垂直居中 */
+#theme-onenav .notion-list-item-title {
+    display: flex !important;
+    align-items: center !important;
+
+    min-width: 0;
+}
+
+/* 标题 icon */
+#theme-onenav .notion-list-item-title .notion-page-icon-inline {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    flex: 0 0 auto;
+}
+
+/* icon 图片本身 */
+#theme-onenav .notion-list-item-title .notion-page-title-icon {
+    display: block !important;
+
+    margin: 0 !important;
+    vertical-align: middle !important;
+}
+
+/* 标题文字 */
+#theme-onenav .notion-list-item-title .notion-property-title {
+    display: inline-flex !important;
+    align-items: center !important;
+
+    line-height: 1.5 !important;
+}
+
+/* 右侧属性区域 */
+#theme-onenav .notion-list-item-body {
+    display: flex !important;
+    align-items: center !important;
+
+    margin-left: auto !important;
+}
+
+/* 日期属性 */
+#theme-onenav .notion-list-item-property {
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Created time：灰色、小字号，与标题垂直居中 */
+#theme-onenav .notion-property-created_time,
+#theme-onenav .notion-property-last_edited_time {
+    display: inline-flex !important;
+    align-items: center !important;
+
+    color: #999 !important;
+
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+
+    white-space: nowrap;
+}
+
+/* hover：
+   保留 react-notion-x 原本的灰色背景，
+   这里只负责圆角，不改成姜黄色 */
+#theme-onenav .notion-list-item:hover {
+    border-radius: 6px !important;
+}
+    /* =========================
+   Notion Page Link：页面引用
+   ========================= */
+
+/* 整个页面引用 */
+#theme-onenav .notion-page-link[class*='notion-block-'] {
+    display: inline-flex !important;
+    align-items: center !important;
+
+    padding: 4px 6px !important;
+    border-radius: 6px !important;
+
+    text-decoration: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+
+    transition:
+        background-color 0.18s ease !important;
+}
+
+/* 杀掉内部所有下划线 */
+#theme-onenav .notion-page-link[class*='notion-block-'] *,
+#theme-onenav .notion-page-link[class*='notion-block-']:hover,
+#theme-onenav .notion-page-link[class*='notion-block-']:hover * {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/* icon + 标题文字 */
+#theme-onenav .notion-page-link[class*='notion-block-'] .notion-page-title {
+    display: inline-flex !important;
+    align-items: center !important;
+
+    gap: 4px;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* icon 外层 */
+#theme-onenav .notion-page-link[class*='notion-block-'] .notion-page-icon-inline {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    flex: 0 0 auto;
+}
+
+/* icon 图片 */
+#theme-onenav .notion-page-link[class*='notion-block-'] .notion-page-title-icon {
+    display: block !important;
+
+    margin: 0 !important;
+    vertical-align: middle !important;
+}
+
+/* 标题 */
+#theme-onenav .notion-page-link[class*='notion-block-'] .notion-page-title-text {
+    display: inline-flex !important;
+    align-items: center !important;
+
+    line-height: 1.5 !important;
+
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+/* hover：和刚才 List 一样保留灰色 */
+#theme-onenav .notion-page-link[class*='notion-block-']:hover {
+    background-color: #f3f3f3 !important;
+    border-radius: 6px !important;
+}
 
       ${themeConsoleStyle('nav', CONFIG, { rootId: 'theme-onenav' })}
   `}</style>
