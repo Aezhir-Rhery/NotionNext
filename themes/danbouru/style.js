@@ -28,6 +28,16 @@ const Style = () => {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         font-size: 13px;
     }
+    /* 主题专属选中样式 */
+    #theme-danbouru ::selection {
+        background-color: var(--danbouru-accent);
+        color: #ffffff;
+    }
+
+    #theme-danbouru ::-moz-selection {
+        background-color: var(--danbouru-accent);
+        color: #ffffff;
+    }
     #top-wrapper img {
         height: 44px;
     }
@@ -1112,6 +1122,44 @@ const Style = () => {
         background-color: var(--danbouru-hover-gray) !important;
         border-radius: var(--danbouru-radius-sm) !important;
     }
+    /* 处理 Notion Quote：去掉原本的背景和左边框，改成左侧姜黄色圆头竖线 */
+    #theme-danbouru .notion-quote {
+        display: block;
+        position: relative;
+
+        border-radius: 5px;
+
+        /* 去掉原本背景和左边框 */
+        background-color: transparent !important;
+        border-left: none !important;
+
+        width: 100%;
+        white-space: pre-wrap;
+        word-break: break-word;
+
+        padding: .2em .9em;
+        margin: 6px 0;
+
+        font-size: 1em;
+    }
+
+    /* 左侧姜黄色圆头竖线 */
+    #theme-danbouru .notion-quote::before {
+        content: '';
+
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+
+        width: 4px;
+
+        background-color: var(--danbouru-accent);
+        border-radius: 999px;
+    }
+
+
+
     ${themeConsoleStyle('nav', CONFIG, { rootId: 'theme-danbouru' })}
   `}</style>
 }

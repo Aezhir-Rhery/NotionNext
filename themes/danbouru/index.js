@@ -264,7 +264,8 @@ const LayoutPostListIndex = props => {
  * @param {*} props
  * @returns
  */
-const LayoutPostList = props => {
+// 弃用原有的
+/*const LayoutPostList = props => {
   const { posts } = props
   // 顶部如果是按照分类或标签查看文章列表，列表顶部嵌入一个横幅
   // 如果是搜索，则列表顶部嵌入 搜索框
@@ -281,7 +282,64 @@ const LayoutPostList = props => {
       </div>
     </>
   )
+} */
+// 换这个，加入一个标题告诉读者点了啥
+const LayoutPostList = props => {
+  const { posts } = props
+  const router = useRouter()
+
+  // 从当前 URL 判断是 Tag 结果页还是 Category 结果页
+  const currentPath = router.asPath.split('?')[0]
+
+  const decodePathValue = value => {
+    if (!value) return ''
+    try {
+      return decodeURIComponent(value)
+    } catch {
+      return value
+    }
+  }
+
+  const tagMatch = currentPath.match(/\/tag\/([^/?#]+)/)
+  const categoryMatch = currentPath.match(/\/category\/([^/?#]+)/)
+
+  const currentTag = tagMatch ? decodePathValue(tagMatch[1]) : ''
+  const currentCategory = categoryMatch
+    ? decodePathValue(categoryMatch[1])
+    : ''
+
+  return (
+    <>
+      <div className='w-full max-w-7xl mx-auto justify-center mt-12'>
+
+        {/* Tag 文章结果标题 */}
+        {currentTag && (
+          <h1 className='danbouru-page-title dark:text-gray-300'>
+            <i className='mr-3 fas fa-tag' />
+            散落的毛 Tag：{currentTag}
+          </h1>
+        )}
+
+        {/* Category 文章结果标题 */}
+        {currentCategory && (
+          <h1 className='danbouru-page-title dark:text-gray-300'>
+            <i className='mr-3 fas fa-th' />
+            分装袋 Category：{currentCategory}
+          </h1>
+        )}
+
+        <div
+          id='posts-wrapper'
+          className='card-list grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
+          {posts?.map(post => (
+            <BlogPostCard key={post.id} post={post} className='card' />
+          ))}
+        </div>
+      </div>
+    </>
+  )
 }
+
 
 /**
  * 文章详情
