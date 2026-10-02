@@ -1299,6 +1299,205 @@ const Style = () => {
         font-weight: 700 !important;
     }
 
+    /* =========================
+    Notion Tabs
+    PC：自动换行
+    Mobile：横向滑动
+    等等……这玩意竟然需要这么长的CSS吗？
+    ========================= */
+
+    /* 整体外框 */
+    #theme-danbouru .notion-tabs {
+        position: relative;
+
+        width: 100%;
+        box-sizing: border-box;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        /* 必须保留：用于消除图片底部空隙 */
+        line-height: 0 !important;
+
+        border: 2px solid var(--danbouru-line) !important;
+        border-radius: 16px !important;
+
+        overflow: hidden;
+
+        /* .card 风格，仅向下投影 */
+        box-shadow: 0 4px 0 var(--danbouru-shadow-clear);
+    }
+
+
+    /* =========================
+    标签栏
+    ========================= */
+
+    #theme-danbouru .notion-tabs-list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        gap: 3px;
+
+        padding: 5px 6px;
+
+        border: none !important;
+
+        overflow: visible;
+
+        /* 恢复父级 line-height: 0 的影响 */
+        line-height: 1.35 !important;
+    }
+
+    /* 清除 Notion 原始装饰线 */
+    #theme-danbouru .notion-tabs-list::before,
+    #theme-danbouru .notion-tabs-list::after {
+        content: none !important;
+        display: none !important;
+    }
+
+
+    /* =========================
+    单个标签
+    ========================= */
+
+    #theme-danbouru .notion-tabs-tab {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        flex: 0 0 auto;
+
+        width: auto !important;
+        min-width: 28px;
+        min-height: 28px;
+
+        padding: 0 8px !important;
+
+        border: none !important;
+        border-radius: 999px !important;
+
+        background: transparent;
+
+        color: inherit;
+
+        font-size: 0.8125rem !important;
+        line-height: 28px !important;
+
+        white-space: nowrap;
+
+        cursor: pointer;
+
+        box-shadow: none !important;
+        outline: none !important;
+        text-decoration: none !important;
+
+        transition:
+            background-color 0.15s ease,
+            color 0.15s ease;
+    }
+
+    /* 清除 Notion 原始标签下划线 / 指示线 */
+    #theme-danbouru .notion-tabs-tab::before,
+    #theme-danbouru .notion-tabs-tab::after {
+        content: none !important;
+        display: none !important;
+    }
+
+
+    /* hover */
+    #theme-danbouru .notion-tabs-tab:hover {
+        background-color: var(--danbouru-accent) !important;
+        color: #fff !important;
+    }
+
+
+    /* 当前标签 */
+    #theme-danbouru .notion-tabs-tab[aria-selected='true'] {
+        background-color: var(--danbouru-accent) !important;
+        color: #fff !important;
+    }
+
+
+    /* =========================
+    Tab 内容
+    ========================= */
+
+    #theme-danbouru .notion-tabs-panel {
+        margin: 0 !important;
+        padding: 0 !important;
+
+        border: none !important;
+
+        line-height: 0 !important;
+    }
+
+
+    /* 图片容器 */
+    #theme-danbouru .notion-tabs-panel figure,
+    #theme-danbouru .notion-tabs-panel .notion-asset-wrapper {
+        display: block !important;
+
+        width: 100% !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        line-height: 0 !important;
+    }
+
+
+    /* react-notion-x 图片内部容器 */
+    #theme-danbouru .notion-tabs-panel .notion-asset-wrapper > div {
+        margin: 0 !important;
+        padding: 0 !important;
+
+        line-height: 0 !important;
+    }
+
+
+    /* 图片 */
+    #theme-danbouru .notion-tabs-panel img {
+        display: block !important;
+
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        border-radius: 0 !important;
+
+        vertical-align: bottom !important;
+    }
+
+
+    /* =========================
+    Mobile
+    ========================= */
+
+    @media (max-width: 767px) {
+
+        #theme-danbouru .notion-tabs-list {
+            flex-wrap: nowrap;
+
+            overflow-x: auto;
+            overflow-y: hidden;
+
+            scrollbar-width: none;
+
+            -webkit-overflow-scrolling: touch;
+        }
+
+        #theme-danbouru .notion-tabs-list::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    
     /* 可自定义的css部分结束 */
 
     ${themeConsoleStyle('nav', CONFIG, { rootId: 'theme-danbouru' })}
