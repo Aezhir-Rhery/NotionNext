@@ -632,7 +632,7 @@ const Style = () => {
 
     #theme-danbouru .danbouru-page-title {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 6px;
 
         font-size: 1.875rem;
@@ -641,13 +641,33 @@ const Style = () => {
         margin-bottom: 1.25rem;
     }
 
+    #theme-danbouru .danbouru-page-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 6px;
+
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+        padding-top: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    #theme-danbouru .danbouru-page-title > i {
+        flex: 0 0 auto;
+        margin-top: 0.18em;
+    }
+
     #theme-danbouru .danbouru-page-title > img {
         width: 32px;
         height: 32px;
+
         flex: 0 0 auto;
-        margin: 0 !important;
+
+        margin: 0.18em 0 0 0 !important;
+
         object-fit: contain;
     }
+
     @media (min-width: 768px) {
         #theme-danbouru .danbouru-page-title {
             padding-top: 3rem;
