@@ -1321,15 +1321,12 @@ const Style = () => {
 
     /* =========================
     Notion Tabs
-    PC：自动换行
-    Mobile：横向滑动
-    等等……这玩意竟然需要这么长的CSS吗？
+    PC / Mobile：统一自动换行
     ========================= */
 
     /* 整体外框 */
     #theme-danbouru .notion-tabs {
         position: relative;
-
         width: 100%;
         box-sizing: border-box;
 
@@ -1363,7 +1360,6 @@ const Style = () => {
         padding: 5px 6px;
 
         border: none !important;
-
         overflow: visible;
 
         /* 恢复父级 line-height: 0 的影响 */
@@ -1399,14 +1395,12 @@ const Style = () => {
         border-radius: 999px !important;
 
         background: transparent;
-
         color: inherit;
 
         font-size: 0.8125rem !important;
         line-height: 28px !important;
 
         white-space: nowrap;
-
         cursor: pointer;
 
         box-shadow: none !important;
@@ -1425,13 +1419,11 @@ const Style = () => {
         display: none !important;
     }
 
-
     /* hover */
     #theme-danbouru .notion-tabs-tab:hover {
         background-color: var(--danbouru-accent) !important;
         color: #fff !important;
     }
-
 
     /* 当前标签 */
     #theme-danbouru .notion-tabs-tab[aria-selected='true'] {
@@ -1453,7 +1445,6 @@ const Style = () => {
         line-height: 0 !important;
     }
 
-
     /* 图片容器 */
     #theme-danbouru .notion-tabs-panel figure,
     #theme-danbouru .notion-tabs-panel .notion-asset-wrapper {
@@ -1468,7 +1459,6 @@ const Style = () => {
         line-height: 0 !important;
     }
 
-
     /* react-notion-x 图片内部容器 */
     #theme-danbouru .notion-tabs-panel .notion-asset-wrapper > div {
         margin: 0 !important;
@@ -1476,7 +1466,6 @@ const Style = () => {
 
         line-height: 0 !important;
     }
-
 
     /* 图片 */
     #theme-danbouru .notion-tabs-panel img {
@@ -1496,26 +1485,51 @@ const Style = () => {
 
 
     /* =========================
-    Mobile
+    Tabs 内普通文字留边距
     ========================= */
 
-    @media (max-width: 767px) {
-
-        #theme-danbouru .notion-tabs-list {
-            flex-wrap: nowrap;
-
-            overflow-x: auto;
-            overflow-y: hidden;
-
-            scrollbar-width: none;
-
-            -webkit-overflow-scrolling: touch;
-        }
-
-        #theme-danbouru .notion-tabs-list::-webkit-scrollbar {
-            display: none;
-        }
+    #theme-danbouru .notion-tabs-panel > .notion-text,
+    #theme-danbouru .notion-tabs-panel > .notion-list,
+    #theme-danbouru .notion-tabs-panel > .notion-quote {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
     }
+    
+/* =========================
+    开始搞挂件啦。
+    ========================= */
+/* =========================
+   Danbouru Live2D
+   ========================= */
+
+.danbouru-live2d {
+    position: fixed;
+
+    right: 16px;
+    bottom: 0;
+
+    width: 320px;
+    height: 360px;
+
+    z-index: 50;
+
+    pointer-events: none;
+}
+
+.danbouru-live2d canvas {
+    display: block;
+
+    width: 320px;
+    height: 360px;
+}
+
+@media (max-width: 767px) {
+    .danbouru-live2d {
+        display: none !important;
+    }
+}
+/* ========================= 挂件结束 */
+
 
     
     /* 可自定义的css部分结束 */
