@@ -1502,32 +1502,6 @@ const Style = () => {
    Danbouru Live2D
    ========================= */
 
-.danbouru-live2d {
-    position: fixed;
-
-    right: 16px;
-    bottom: 0;
-
-    width: 320px;
-    height: 360px;
-
-    z-index: 50;
-
-    pointer-events: none;
-}
-
-.danbouru-live2d canvas {
-    display: block;
-
-    width: 320px;
-    height: 360px;
-}
-
-@media (max-width: 767px) {
-    .danbouru-live2d {
-        display: none !important;
-    }
-}
 /* ========================= 挂件结束 */
 
 

@@ -19,6 +19,7 @@ import { createContext, useContext, useEffect, useState } from 'react'
 import { ArticleLock } from './components/ArticleLock'
 import CONFIG from './config'
 import { Style } from './style'
+// import DanbouruLive2D from '@/components/Live2DWidget'
 
 const getTitleIconUrl = icon => {
   if (!icon?.startsWith('http')) return icon
@@ -39,7 +40,10 @@ const AdSlot = dynamic(() => import('@/components/GoogleAdsense').then(mod => mo
   ssr: false
 })
 const Comment = dynamic(() => import('@/components/Comment'), { ssr: false })
-const Live2D = dynamic(() => import('@/components/Live2D'), { ssr: false })
+// const Live2D = dynamic(() => import('@/components/Live2D'), { ssr: false })
+const Live2D = dynamic(() => import('./components/Live2DWidget'), {
+  ssr: false
+})
 const NotionPage = dynamic(() => import('@/components/NotionPage'), {
   ssr: true
 })
@@ -137,6 +141,9 @@ const LayoutBase = props => {
       {/* 样式 */}
       <Style />
 
+      {/* Live2D Widget */}
+      <Live2D />
+
       {/* 主题样式根基 */}
       <div
         id='theme-danbouru'
@@ -176,7 +183,6 @@ const LayoutBase = props => {
 
             {/* 页脚站点信息 */}
             <div className='w-56 fixed left-0 bottom-0 z-0'>
-              <Live2D />
               <Footer {...props} />
             </div>
           </div>
